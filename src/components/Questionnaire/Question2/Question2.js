@@ -1,16 +1,19 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { QuestionnaireContext } from '../../../questionnaireContext';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 function Question2(props) {
 	const { twoData, setTwoData } = useContext(QuestionnaireContext);
+	// const initialCheck = false;
+	// const [checked, setChecked] = useState(initialCheck);
 
 	const navigate = useNavigate();
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		console.log(twoData);
-		// navigate('/question/3');
+
+		navigate('/question/3');
 	};
 
 	const handleChange = (event) => {
@@ -42,8 +45,17 @@ function Question2(props) {
 					type='radio'
 					id='facial-droop-yes'
 					name='yes'
-					value={twoData}
-					checked={twoData}
+					value={true}
+					checked={twoData === true}
+					onChange={handleChange}
+				/>
+				<label htmlFor='facial-droop-no'>No</label>
+				<input
+					type='radio'
+					id='facial-droop-no'
+					name='no'
+					value={false}
+					checked={twoData === false}
 					onChange={handleChange}
 				/>
 

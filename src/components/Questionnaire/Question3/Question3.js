@@ -25,10 +25,10 @@ function Question3(props) {
 				<p>This is question 3</p>
 			</div>
 			<form onSubmit={handleSubmit}>
-				<label for='arm-drift'>Arm-Drift: </label>
-				<label for='arm-drift-yes'>Yes</label>
+				<label htmlFor='arm-drift'>Arm-Drift: </label>
+				<label htmlFor='arm-drift-yes'>Yes</label>
 				<input type='radio' id='arm-drift-yes' name='yes' value='True' />
-				<label for='arm-drift-no'>No</label>
+				<label htmlFor='arm-drift-no'>No</label>
 				<input type='radio' id='arm-drift-no' name='no' value='True' />
 
 				<button type='submit'>Next</button>
