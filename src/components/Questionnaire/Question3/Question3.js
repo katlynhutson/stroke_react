@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { QuestionnaireContext } from '../../../questionnaireContext';
 
@@ -7,8 +7,19 @@ function Question3(props) {
 
 	const navigate = useNavigate();
 
-	const handleSubmit = () => {
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		console.log(threeData);
 		navigate('/question/4');
+	};
+
+	const handleChange = (event) => {
+		if (threeData) {
+			setThreeData(false);
+		} else {
+			setThreeData(true);
+		}
+		console.log(threeData);
 	};
 
 	return (
@@ -27,9 +38,23 @@ function Question3(props) {
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='arm-drift'>Arm-Drift: </label>
 				<label htmlFor='arm-drift-yes'>Yes</label>
-				<input type='radio' id='arm-drift-yes' name='yes' value='True' />
+				<input
+					type='radio'
+					id='arm-drift-yes'
+					name='yes'
+					value={true}
+					checked={threeData === true}
+					onChange={handleChange}
+				/>
 				<label htmlFor='arm-drift-no'>No</label>
-				<input type='radio' id='arm-drift-no' name='no' value='True' />
+				<input
+					type='radio'
+					id='arm-drift-no'
+					name='no'
+					value={false}
+					checked={threeData === false}
+					onChange={handleChange}
+				/>
 
 				<button type='submit'>Next</button>
 			</form>

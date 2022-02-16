@@ -1,14 +1,40 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { QuestionnaireContext } from '../../../questionnaireContext';
+import API_URL from '../../../apiConfig';
 
 function Question5(props) {
-	const { fiveData, setFiveData } = useContext(QuestionnaireContext);
+	const {
+		fiveData,
+		setFiveData,
+		fourData,
+		threeData,
+		twoData,
+		oneData,
+		formData,
+		setFormData,
+	} = useContext(QuestionnaireContext);
 
 	const navigate = useNavigate();
 
-	const handleSubmit = () => {
+	const handleSubmit = (event) => {
+		event.preventDefault();
+
+		setFormData({
+			facial_droop: twoData,
+			arm_drift: threeData,
+			speech: fourData,
+			onset_time: oneData,
+			additional_notes: fiveData,
+		});
+		console.log(formData);
 		navigate('/complete');
+	};
+
+	const handleChange = (event) => {
+		setFiveData(event.target.value);
+
+		console.log(fiveData);
 	};
 
 	return (
@@ -25,8 +51,8 @@ function Question5(props) {
 				<p>This is question 5</p>
 			</div>
 			<form onSubmit={handleSubmit}>
-				<label for='notes'>Additional Notes: </label>
-				<input type='text' />
+				<label htmlFor='notes'>Additional Notes: </label>
+				<input type='text' onChange={handleChange} />
 				<button type='submit'>Next</button>
 			</form>
 		</main>

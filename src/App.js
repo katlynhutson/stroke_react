@@ -15,14 +15,19 @@ import CompleteForm from './components/Questionnaire/CompleteForm/CompleteForm';
 function App() {
 	const initialOne = '00:00';
 	const initialTwo = false;
+	const initialThree = false;
+	const initialFour = false;
+	const initialFive = '';
 
-	const [formData, setFormData] = useState();
+	const initialForm = {};
+
+	const [formData, setFormData] = useState(initialForm);
 
 	const [oneData, setOneData] = useState(initialOne);
 	const [twoData, setTwoData] = useState(initialTwo);
-	const [threeData, setThreeData] = useState();
-	const [fourData, setFourData] = useState();
-	const [fiveData, setFiveData] = useState();
+	const [threeData, setThreeData] = useState(initialThree);
+	const [fourData, setFourData] = useState(initialFour);
+	const [fiveData, setFiveData] = useState(initialFive);
 
 	return (
 		<div>

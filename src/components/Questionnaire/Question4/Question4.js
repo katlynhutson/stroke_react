@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { QuestionnaireContext } from '../../../questionnaireContext';
 
@@ -7,8 +7,19 @@ function Question4(props) {
 
 	const navigate = useNavigate();
 
-	const handleSubmit = () => {
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		console.log(fourData);
 		navigate('/question/5');
+	};
+
+	const handleChange = (event) => {
+		if (fourData) {
+			setFourData(false);
+		} else {
+			setFourData(true);
+		}
+		console.log(fourData);
 	};
 
 	return (
@@ -25,11 +36,25 @@ function Question4(props) {
 				<p>This is question 4</p>
 			</div>
 			<form onSubmit={handleSubmit}>
-				<label for='speech'>Speech: </label>
-				<label for='speech-yes'>Yes</label>
-				<input type='radio' id='speech-yes' name='yes' value='True' />
-				<label for='speech-no'>No</label>
-				<input type='radio' id='speech-no' name='no' value='True' />
+				<label htmlFor='speech'>Speech: </label>
+				<label htmlFor='speech-yes'>Yes</label>
+				<input
+					type='radio'
+					id='speech-yes'
+					name='yes'
+					value={true}
+					checked={fourData === true}
+					onChange={handleChange}
+				/>
+				<label htmlFor='speech-no'>No</label>
+				<input
+					type='radio'
+					id='speech-no'
+					name='no'
+					value={false}
+					checked={fourData === false}
+					onChange={handleChange}
+				/>
 
 				<button type='submit'>Next</button>
 			</form>

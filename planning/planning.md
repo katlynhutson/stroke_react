@@ -1,5 +1,25 @@
 # Planning
 
+## 02/15 Planning
+
+### Goals
+
+- Establish Post functionality as a logged in user and as a anonymous user
+- Deploy backend
+
+### Little Steps
+
+- useContext - :)
+- seperate state's for each question - :)
+- complete question one form - :)
+- complete question two form - :)
+- complete question three form - :)
+- complete question four form - :)
+- complete question five form - :)
+- display the compiled information
+- post to the backend under the "data" path
+- employee login functionality
+
 ## 02/14 Planning
 
 ### Goals
@@ -8,19 +28,13 @@
 
 ### Little Steps
 
-- Create each component folder needed for MVP
-- Route the Nav Bar
-- Route the Components
-- Set up CR functionality in Questionnaire Components
-- Deploy Backend when front end MVP reached
+- Create each component folder needed for MVP - :)
+- Route the Nav Bar - :)
+- Route the Components - :)
+- Set up CR functionality in Questionnaire Components - tomorrow!
+- Deploy Backend when front end MVP reached - tomorrow!
 
 ## Issue Ticket with Initial planning
-
-### Project idea
-
-> A first-responder tool to help identify potential strokes, record valuable information at the time of the neurological event, and lessen the burden of memory on civilian first responders. It’s a tool you can turn to if a loved one is behaving strangely, and you need to determine if you should call an ambulance for a possible stroke. The most important piece of information that needs to be gathered for stroke victims is the time of first symptoms. Time since symptom onset decides the potential treatment options. The longer it’s been the less options available and the more brain damage that is incurred. This app is a way of having some pieces of that puzzle without putting the burden on the loved one to remember protocol during an extremely stressful event.
-
-### Tech stack
 
 #### Frontend
 

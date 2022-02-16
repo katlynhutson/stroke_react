@@ -1,11 +1,9 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { QuestionnaireContext } from '../../../questionnaireContext';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 
 function Question2(props) {
 	const { twoData, setTwoData } = useContext(QuestionnaireContext);
-	// const initialCheck = false;
-	// const [checked, setChecked] = useState(initialCheck);
 
 	const navigate = useNavigate();
 
