@@ -1,11 +1,29 @@
 # Planning
 
+## 02/16 Planning
+
+### Goals
+
+- Establish Post functionality as a logged in user
+- content crteation
+- STYLE STYLE STYLE
+
+### Little Steps
+
+- login functionality
+- post request from logged in user
+- edit request from logged in user to specifically edit the additional notes section
+- create specific content for each question
+- create specific content for the about page
+- create specific content for formatting the form data
+- put a grid on it
+
 ## 02/15 Planning
 
 ### Goals
 
-- Establish Post functionality as a logged in user and as a anonymous user
-- Deploy backend
+- Establish Post functionality as a logged in user and as a anonymous user - :|
+- Deploy backend - :)
 
 ### Little Steps
 
@@ -16,8 +34,8 @@
 - complete question three form - :)
 - complete question four form - :)
 - complete question five form - :)
-- display the compiled information
-- post to the backend under the "data" path
+- display the compiled information - :)
+- post to the backend under the "data" path - :)
 - employee login functionality
 
 ## 02/14 Planning

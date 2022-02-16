@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { QuestionnaireContext } from '../../../questionnaireContext';
-import API_URL from '../../../apiConfig';
 
 function Question5(props) {
 	const {
@@ -11,7 +10,6 @@ function Question5(props) {
 		threeData,
 		twoData,
 		oneData,
-		formData,
 		setFormData,
 	} = useContext(QuestionnaireContext);
 
@@ -19,29 +17,6 @@ function Question5(props) {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-
-		const data = formData;
-		console.log(data);
-		try {
-			const response = await fetch(API_URL + 'data/', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(data),
-			});
-			console.log(response);
-			if (response.status === 201) {
-				const data = await response.json();
-				console.log(data);
-			}
-		} catch (error) {}
-
-		navigate('/complete');
-	};
-
-	const handleChange = (event) => {
-		setFiveData(event.target.value);
 		setFormData({
 			facial_droop: twoData,
 			arm_drift: threeData,
@@ -49,6 +24,29 @@ function Question5(props) {
 			onset_time: oneData,
 			additional_notes: fiveData,
 		});
+		navigate('/complete');
+		// const data = formData;
+
+		// try {
+		// 	const response = await fetch(API_URL + 'data/', {
+		// 		method: 'POST',
+		// 		headers: {
+		// 			'Content-Type': 'application/json',
+		// 		},
+		// 		body: JSON.stringify(data),
+		// 	});
+		// 	console.log(response);
+		// 	if (response.status === 201) {
+		// 		const data = await response.json();
+
+		// 		setDataId(data.id);
+		// 		navigate('/complete');
+		// 	}
+		// } catch (error) {}
+	};
+
+	const handleChange = (event) => {
+		setFiveData(event.target.value);
 	};
 
 	return (

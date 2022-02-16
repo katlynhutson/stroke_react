@@ -11,6 +11,7 @@ import Question3 from './components/Questionnaire/Question3/Question3';
 import Question4 from './components/Questionnaire/Question4/Question4';
 import Question5 from './components/Questionnaire/Question5/Question5';
 import CompleteForm from './components/Questionnaire/CompleteForm/CompleteForm';
+import CreateAccount from './components/CreateAccount/CreateAccount';
 
 function App() {
 	const initialOne = '00:00';
@@ -22,6 +23,8 @@ function App() {
 	const initialForm = {};
 
 	const [formData, setFormData] = useState(initialForm);
+
+	const [formQuestionnaire, setFormQuestionnaire] = useState(initialForm);
 
 	const [oneData, setOneData] = useState(initialOne);
 	const [twoData, setTwoData] = useState(initialTwo);
@@ -40,6 +43,8 @@ function App() {
 					formData,
 					setFormData,
 
+					formQuestionnaire,
+					setFormQuestionnaire,
 					oneData,
 					setOneData,
 					twoData,
@@ -63,6 +68,7 @@ function App() {
 					<Route path='/question/5' element={<Question5 />} />
 
 					<Route path='/complete' element={<CompleteForm />} />
+					<Route path='/createaccount' element={<CreateAccount />} />
 				</Routes>
 			</QuestionnaireContext.Provider>
 		</div>
