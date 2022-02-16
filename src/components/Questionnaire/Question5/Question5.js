@@ -4,26 +4,27 @@ import { QuestionnaireContext } from '../../../questionnaireContext';
 
 function Question5(props) {
 	const {
-		fiveData,
-		setFiveData,
-		fourData,
-		threeData,
-		twoData,
-		oneData,
+		// fiveData,
+		// setFiveData,
+		// fourData,
+		// threeData,
+		// twoData,
+		// oneData,
 		setFormData,
+		formData,
 	} = useContext(QuestionnaireContext);
 
 	const navigate = useNavigate();
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-		setFormData({
-			facial_droop: twoData,
-			arm_drift: threeData,
-			speech: fourData,
-			onset_time: oneData,
-			additional_notes: fiveData,
-		});
+		// setFormData({
+		// 	facial_droop: twoData,
+		// 	arm_drift: threeData,
+		// 	speech: fourData,
+		// 	onset_time: oneData,
+		// 	additional_notes: fiveData,
+		// });
 		navigate('/complete');
 		// const data = formData;
 
@@ -46,7 +47,7 @@ function Question5(props) {
 	};
 
 	const handleChange = (event) => {
-		setFiveData(event.target.value);
+		setFormData({ ...formData, [event.target.name]: event.target.value });
 	};
 
 	return (
@@ -64,7 +65,7 @@ function Question5(props) {
 			</div>
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='notes'>Additional Notes: </label>
-				<input type='text' onChange={handleChange} />
+				<input type='text' name='additional_notes' onChange={handleChange} />
 				<button type='submit'>Next</button>
 			</form>
 		</main>

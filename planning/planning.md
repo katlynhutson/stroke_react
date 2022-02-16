@@ -10,6 +10,9 @@
 
 ### Little Steps
 
+- create account functionality
+- auto log in functionality
+- post after create account functionality
 - login functionality
 - post request from logged in user
 - edit request from logged in user to specifically edit the additional notes section

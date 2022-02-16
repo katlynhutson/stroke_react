@@ -14,23 +14,19 @@ import CompleteForm from './components/Questionnaire/CompleteForm/CompleteForm';
 import CreateAccount from './components/CreateAccount/CreateAccount';
 
 function App() {
-	const initialOne = '00:00';
-	const initialTwo = false;
-	const initialThree = false;
-	const initialFour = false;
-	const initialFive = '';
+	const initialData = {
+		onset_time: '00:00',
+		facial_droop: false,
+		arm_drift: false,
+		speech: false,
+		additional_notes: '',
+	};
 
-	const initialForm = {};
+	const [formData, setFormData] = useState(initialData);
 
-	const [formData, setFormData] = useState(initialForm);
-
-	const [formQuestionnaire, setFormQuestionnaire] = useState(initialForm);
-
-	const [oneData, setOneData] = useState(initialOne);
-	const [twoData, setTwoData] = useState(initialTwo);
-	const [threeData, setThreeData] = useState(initialThree);
-	const [fourData, setFourData] = useState(initialFour);
-	const [fiveData, setFiveData] = useState(initialFive);
+	const [loggedIn, setLoggedIn] = useState(
+		localStorage.getItem('token') ? true : false
+	);
 
 	return (
 		<div>
@@ -43,18 +39,8 @@ function App() {
 					formData,
 					setFormData,
 
-					formQuestionnaire,
-					setFormQuestionnaire,
-					oneData,
-					setOneData,
-					twoData,
-					setTwoData,
-					threeData,
-					setThreeData,
-					fourData,
-					setFourData,
-					fiveData,
-					setFiveData,
+					loggedIn,
+					setLoggedIn,
 				}}>
 				<Routes>
 					<Route path='/' element={<Home />} />

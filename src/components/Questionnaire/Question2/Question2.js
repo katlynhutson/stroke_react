@@ -3,7 +3,7 @@ import { QuestionnaireContext } from '../../../questionnaireContext';
 import { useContext } from 'react';
 
 function Question2(props) {
-	const { twoData, setTwoData } = useContext(QuestionnaireContext);
+	const { formData, setFormData } = useContext(QuestionnaireContext);
 
 	const navigate = useNavigate();
 
@@ -14,10 +14,10 @@ function Question2(props) {
 	};
 
 	const handleChange = (event) => {
-		if (twoData) {
-			setTwoData(false);
+		if (formData.facial_droop) {
+			setFormData({ ...formData, [event.target.name]: false });
 		} else {
-			setTwoData(true);
+			setFormData({ ...formData, [event.target.name]: true });
 		}
 	};
 
@@ -40,18 +40,18 @@ function Question2(props) {
 				<input
 					type='radio'
 					id='facial-droop-yes'
-					name='yes'
+					name='facial_droop'
 					value={true}
-					checked={twoData === true}
+					checked={formData.facial_droop === true}
 					onChange={handleChange}
 				/>
 				<label htmlFor='facial-droop-no'>No</label>
 				<input
 					type='radio'
 					id='facial-droop-no'
-					name='no'
+					name='facial_droop'
 					value={false}
-					checked={twoData === false}
+					checked={formData.facial_droop === false}
 					onChange={handleChange}
 				/>
 
