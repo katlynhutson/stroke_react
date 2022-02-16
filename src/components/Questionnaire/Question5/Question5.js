@@ -17,9 +17,31 @@ function Question5(props) {
 
 	const navigate = useNavigate();
 
-	const handleSubmit = (event) => {
+	const handleSubmit = async (event) => {
 		event.preventDefault();
 
+		const data = formData;
+		console.log(data);
+		try {
+			const response = await fetch(API_URL + 'data/', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(data),
+			});
+			console.log(response);
+			if (response.status === 201) {
+				const data = await response.json();
+				console.log(data);
+			}
+		} catch (error) {}
+
+		navigate('/complete');
+	};
+
+	const handleChange = (event) => {
+		setFiveData(event.target.value);
 		setFormData({
 			facial_droop: twoData,
 			arm_drift: threeData,
@@ -27,14 +49,6 @@ function Question5(props) {
 			onset_time: oneData,
 			additional_notes: fiveData,
 		});
-		console.log(formData);
-		navigate('/complete');
-	};
-
-	const handleChange = (event) => {
-		setFiveData(event.target.value);
-
-		console.log(fiveData);
 	};
 
 	return (

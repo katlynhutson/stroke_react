@@ -9,7 +9,7 @@ function Question3(props) {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		console.log(threeData);
+
 		navigate('/question/4');
 	};
 
@@ -19,7 +19,6 @@ function Question3(props) {
 		} else {
 			setThreeData(true);
 		}
-		console.log(threeData);
 	};
 
 	return (

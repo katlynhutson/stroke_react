@@ -9,14 +9,12 @@ function Question1(props) {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		console.log(oneData);
 
 		navigate('/question/2');
 	};
 
 	const handleChange = (event) => {
 		setOneData(event.target.value);
-		console.log(oneData);
 	};
 
 	return (
