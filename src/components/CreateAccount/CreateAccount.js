@@ -4,7 +4,8 @@ import { useContext, useState } from 'react';
 import { QuestionnaireContext } from '../../questionnaireContext';
 
 function CreateAccount(props) {
-	const { formData, loggedIn, setLoggedIn } = useContext(QuestionnaireContext);
+	const { formData, loggedIn, setLoggedIn, setUsername } =
+		useContext(QuestionnaireContext);
 
 	const initalAccount = {
 		email: '',
@@ -20,6 +21,7 @@ function CreateAccount(props) {
 	const handleSetLoggedIn = (token) => {
 		localStorage.setItem('token', token);
 		setLoggedIn(true);
+
 		return;
 	};
 
@@ -69,6 +71,8 @@ function CreateAccount(props) {
 							if (response.status === 201) {
 								const data = await response.json();
 								console.log(data);
+								setUsername(account.username);
+								navigate(`/previousevents/${data.id}`);
 							}
 						} catch (error) {}
 					}

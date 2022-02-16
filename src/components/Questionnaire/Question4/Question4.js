@@ -51,7 +51,7 @@ function Question4(props) {
 					id='speech-no'
 					name='speech'
 					value={false}
-					checked={formData === false}
+					checked={formData.speech === false}
 					onChange={handleChange}
 				/>
 

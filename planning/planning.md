@@ -4,16 +4,17 @@
 
 ### Goals
 
-- Establish Post functionality as a logged in user
+- Establish Post functionality as a logged in user - :)))
 - content crteation
 - STYLE STYLE STYLE
 
 ### Little Steps
 
-- create account functionality
-- auto log in functionality
-- post after create account functionality
+- create account functionality - :)
+- auto log in functionality - :)
+- post after create account functionality - :)
 - login functionality
+- read functionality after login
 - post request from logged in user
 - edit request from logged in user to specifically edit the additional notes section
 - create specific content for each question
