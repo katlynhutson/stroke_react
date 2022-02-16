@@ -27,14 +27,12 @@ function Question5(props) {
 			onset_time: oneData,
 			additional_notes: fiveData,
 		});
-		console.log(formData);
+
 		navigate('/complete');
 	};
 
 	const handleChange = (event) => {
 		setFiveData(event.target.value);
-
-		console.log(fiveData);
 	};
 
 	return (

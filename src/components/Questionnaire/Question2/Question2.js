@@ -9,7 +9,6 @@ function Question2(props) {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		console.log(twoData);
 
 		navigate('/question/3');
 	};
@@ -20,7 +19,6 @@ function Question2(props) {
 		} else {
 			setTwoData(true);
 		}
-		console.log(twoData);
 	};
 
 	return (

@@ -9,7 +9,7 @@ function Question4(props) {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		console.log(fourData);
+
 		navigate('/question/5');
 	};
 
@@ -19,7 +19,6 @@ function Question4(props) {
 		} else {
 			setFourData(true);
 		}
-		console.log(fourData);
 	};
 
 	return (
