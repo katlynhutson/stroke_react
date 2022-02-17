@@ -32,15 +32,15 @@ const MyAccount = ({ getUsername }) => {
 	return (
 		<div>
 			<h2>My Records</h2>
-			{previousEvents.map((previous) => {
+			<h3>Earliest</h3>
+			{previousEvents.map((previous, index) => {
 				return (
 					<div key={previous.id}>
-						<Link to={`/previousevents/${previous.id}`}>
-							{previous.created_at}
-						</Link>
+						<Link to={`/previousevents/${previous.id}`}>{index + 1}</Link>
 					</div>
 				);
 			})}
+			<h3>Latest</h3>
 		</div>
 	);
 };

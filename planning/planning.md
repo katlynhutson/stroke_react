@@ -20,18 +20,18 @@
 - create form checker to dete - :)
 - get rid of alerts - :)
 - create specific content for each question
-  - home.js content
-  - about.js content
-  - q1 content
-  - q2 content
-  - q3 content
-  - q4 content
-  - q5 content
-  - completed form content
-  - create account content
-  - log in content
-  - previous event content
-  - my account content
+  - home.js content - :)
+  - about.js content - :)
+  - q1 content - :)
+  - q2 content - :)
+  - q3 content - :)
+  - q4 content - :)
+  - q5 content - :)
+  - completed form content - :)
+  - create account content - :)
+  - log in content - :)
+  - previous event content - :)
+  - my account content - :)
 
 ## 02/15 Planning
 

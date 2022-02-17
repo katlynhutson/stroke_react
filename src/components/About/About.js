@@ -12,8 +12,10 @@ function About(props) {
 				</a>
 				, a system for diagnosing a possible stroke outside of the hospital
 				setting. The Cincinnati Prehospital Stroke Scale is commonly used by
-				EMT's and 911 operators to determine aid in patient care and establish
-				stroke-risk level.
+				EMT's and 911 operators to determine aid in patient care and establish{' '}
+				<a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4608338/#:~:text=The%20sensitivity%20of%2093.19%25%20(95,%25%20(95%25%20Cl%3A%200.09'>
+					stroke-risk level.
+				</a>
 			</p>
 			<p>
 				By filling out the questionnaire provided, a user of this application
@@ -39,7 +41,10 @@ function About(props) {
 				error to be expected during a stressful event.
 			</p>
 			<h3>Creator</h3>
-			<p>I created this application for myself.</p>
+			<p>
+				Hi, I'm Katy, a software engineer. I created this application for
+				myself.
+			</p>
 			<p>
 				I was the sole witness to a family member experiencing stroke symptoms
 				in January of 2022. That family member was experiencing a TIA or
@@ -73,6 +78,10 @@ function About(props) {
 			<a href='mailto:kmhutson5@att.net?subject = Feedback&body = Message'>
 				Send Feedback
 			</a>
+			<p>
+				Katlyn Hutson is a Software Engineer in DFW, Texas. She is currently
+				seeking opportunities!{' '}
+			</p>
 		</div>
 	);
 }

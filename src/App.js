@@ -17,6 +17,10 @@ import PreviousEvent from './components/PreviousEvent/PreviousEvent';
 import LogIn from './components/LogIn/LogIn';
 import MyAccount from './components/MyAccount/MyAccount';
 
+import './style/header.css';
+
+import { Animated } from 'react-animated-css';
+
 function App() {
 	const initialData = {
 		onset_time: '00:00',
@@ -113,7 +117,7 @@ function App() {
 	}, [loggedIn]);
 
 	return (
-		<div>
+		<div className='overall-container'>
 			<QuestionnaireContext.Provider
 				value={{
 					formData,
@@ -125,7 +129,10 @@ function App() {
 					userId,
 				}}>
 				<header>
-					<h1>STROKE RESPONSE</h1>
+					<Animated animationIn='bounceInDown' className='title'>
+						<h1>Stroke Response</h1>
+					</Animated>
+
 					<Navigation handleLogout={handleLogout} />
 				</header>
 

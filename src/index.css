@@ -1,11 +1,26 @@
+@import-normalize;
+
 :root {
-	--black: rgb(0, 0, 0);
-	--navy: rgb(20, 33, 61);
-	--orange: rgb(252, 163, 17);
-	--gray: rgb(229, 229, 229);
-	--white: rgb(255, 255, 255);
+	--blue: rgb(165, 196, 212);
+	--periwinkle: rgb(132, 153, 177);
+	--lavender: rgb(123, 109, 141);
+	--purple: rgb(89, 63, 98);
+	--plum: rgb(54, 21, 30);
+	--transparent-lavender: rgb(123, 109, 141, 0.7);
 }
 
 * {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Merriweather', 'Times New Roman', Times, serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--blue);
+	color: black;
+}
+
+li {
+	list-style: none;
 }

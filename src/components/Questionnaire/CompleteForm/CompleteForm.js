@@ -122,11 +122,11 @@ function CompleteForm(props) {
 			<h3>Time of Symptom Onset</h3>
 			<p>{dataDetail.onset_time}</p>
 			<h3>Facial Droop</h3>
-			<p>{dataDetail.facial_droop.toString()}</p>
+			{dataDetail.facial_droop ? <p>Abnormal</p> : <p>Normal</p>}
 			<h3>Arm Drift</h3>
-			<p>{dataDetail.arm_drift.toString()}</p>
+			{dataDetail.arm_drift ? <p>Abnormal</p> : <p>Normal</p>}
 			<h3>Speech</h3>
-			<p>{dataDetail.speech.toString()}</p>
+			{dataDetail.speech ? <p>Abnormal</p> : <p>Normal</p>}
 			<h3>Additional Notes</h3>
 			<p>{dataDetail.additional_notes}</p>
 			<button onClick={handleCreate} disabled={loggedIn}>
@@ -135,10 +135,35 @@ function CompleteForm(props) {
 			<button onClick={handlePost} disabled={!loggedIn}>
 				Submit to My Account
 			</button>
-			{oneHundred ? <p>100</p> : null}
-			{sixtySix ? <p>66</p> : null}
-			{thirtythree ? <p>33</p> : null}
-			{zero ? <p>0</p> : null}
+			{oneHundred ? (
+				<p>
+					Based off of these results, the patient's risk of currently
+					experiencing an acute stroke is over 85%. Please call 911 immediately
+					with this information.
+				</p>
+			) : null}
+			{sixtySix ? (
+				<p>
+					Based off of these results, the patient's risk of currently
+					experiencing a stroke is high. Please call 911 immediately with this
+					information.
+				</p>
+			) : null}
+			{thirtythree ? (
+				<p>
+					Based off of these results, the patient's risk of currently
+					experiencing an ischemic stroke is 72%. Please call 911 immediately
+					with this information.
+				</p>
+			) : null}
+			{zero ? (
+				<p>
+					Based off of these results, the patient does not fall on the
+					Cincinnati Prehospital Stroke Scale. BUT, please keep in mind, they
+					may still be experiencing a neurological event, or another serious
+					medical event.
+				</p>
+			) : null}
 		</div>
 	);
 }
