@@ -86,60 +86,75 @@ const PreviousEvent = ({ getUsername }) => {
 	}, []);
 
 	if (!previousEvent) {
-		return <p>no</p>;
+		return <p className='loading'>Loading.</p>;
 	}
 	if (previousEvent.owner !== username) {
-		return <p> no again</p>;
+		return <p className='loading'> Loading.</p>;
 	}
 
 	return (
-		<div>
-			<h2>Previous Event</h2>
-			<h3>Created On</h3>
-			<p>{time.toString()}</p>
-			<h3>onset time</h3>
-			<p>{previousEvent.onset_time}</p>
-			<h3>facial droop</h3>
-			{previousEvent.facial_droop ? <p>Abnormal</p> : <p>Normal</p>}
-			<h3>arm drift</h3>
-			{previousEvent.arm_drift ? <p>Abnormal</p> : <p>Normal</p>}
-			<h3>speech</h3>
-			{previousEvent.speech ? <p>Abnormal</p> : <p>Normal</p>}
-			<h3>additional notes</h3>
-			<p>{previousEvent.additional_notes}</p>
-			<h3>Created By</h3>
-			<p>user: {previousEvent.owner}</p>
-			<h3>Cincinnati Prehosptal Stroke Score</h3>
-			<button onClick={getScore}>Display</button>
-			{oneHundred ? (
-				<p>
-					Based off of these results, the patient's risk of currently
-					experiencing an acute stroke is over 85%. Please call 911 immediately
-					with this information.
-				</p>
-			) : null}
-			{sixtySix ? (
-				<p>
-					Based off of these results, the patient's risk of currently
-					experiencing a stroke is high. Please call 911 immediately with this
-					information.
-				</p>
-			) : null}
-			{thirtythree ? (
-				<p>
-					Based off of these results, the patient's risk of currently
-					experiencing an ischemic stroke is 72%. Please call 911 immediately
-					with this information.
-				</p>
-			) : null}
-			{zero ? (
-				<p>
-					Based off of these results, the patient does not fall on the
-					Cincinnati Prehospital Stroke Scale. BUT, please keep in mind, they
-					may still be experiencing a neurological event, or another serious
-					medical event.
-				</p>
-			) : null}
+		<div className='submitted-form'>
+			<div className='form-box'>
+				<p className='form-title'>Previous Event:</p>
+				<p className='section-title'>Created On:</p>
+				<p className='form-data'>{time.toString()}</p>
+				<p className='section-title'>Time of Onset:</p>
+				<p className='form-data'>{previousEvent.onset_time}</p>
+				<p className='section-title'>Facial Droop:</p>
+				{previousEvent.facial_droop ? (
+					<p className='form-data'>Abnormal</p>
+				) : (
+					<p className='form-data'>Normal</p>
+				)}
+				<p className='section-title'>Arm Drift:</p>
+				{previousEvent.arm_drift ? (
+					<p className='form-data'>Abnormal</p>
+				) : (
+					<p className='form-data'>Normal</p>
+				)}
+				<p className='section-title'>Speech:</p>
+				{previousEvent.speech ? (
+					<p className='form-data'>Abnormal</p>
+				) : (
+					<p className='form-data'>Normal</p>
+				)}
+				<p className='section-title'>Additional Notes:</p>
+				<p className='form-data'>{previousEvent.additional_notes}</p>
+				<p className='section-title'>Created By:</p>
+				<p className='form-data'>user: {previousEvent.owner}</p>
+				<p className='section-title'>Cincinnati Prehosptal Stroke Score:</p>
+				<div className='form-data'>
+					<button className='form-submit' onClick={getScore}>
+						Display Score
+					</button>
+				</div>
+				{oneHundred ? (
+					<p className='message'>
+						Based off of these results, the patient's risk of currently
+						experiencing an acute stroke is over 85%.
+					</p>
+				) : null}
+				{sixtySix ? (
+					<p className='message'>
+						Based off of these results, the patient's risk of currently
+						experiencing a stroke is high.
+					</p>
+				) : null}
+				{thirtythree ? (
+					<p className='message'>
+						Based off of these results, the patient's risk of currently
+						experiencing an ischemic stroke is 72%.
+					</p>
+				) : null}
+				{zero ? (
+					<p className='message'>
+						Based off of these results, the patient does not fall on the
+						Cincinnati Prehospital Stroke Scale. BUT, please keep in mind, they
+						may still be experiencing a neurological event, or another serious
+						medical event.
+					</p>
+				) : null}
+			</div>
 		</div>
 	);
 };

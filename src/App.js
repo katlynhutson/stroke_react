@@ -23,6 +23,7 @@ import './style/question.css';
 import './style/submitted-form.css';
 import './style/create-account.css';
 import './style/about.css';
+import './style/my-account.css';
 
 import { Animated } from 'react-animated-css';
 

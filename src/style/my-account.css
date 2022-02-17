@@ -1,0 +1,56 @@
+.myaccount {
+	display: flex;
+	justify-content: center;
+	flex-flow: column;
+	margin: 1rem;
+	padding: 1rem;
+	border: 2px solid var(--navy);
+}
+
+.myaccount-title {
+	font-size: 1rem;
+	color: var(--navy);
+	text-align: center;
+	margin: 1rem;
+	padding: 1rem;
+	border: 2px solid var(--red);
+}
+
+.myaccount-new {
+	font-size: 1rem;
+	color: var(--navy);
+	text-align: center;
+	margin: 1rem;
+	padding: 1rem;
+	border: 2px solid var(--red);
+}
+
+.myaccount-old {
+	font-size: 1rem;
+	color: var(--navy);
+	text-align: center;
+	margin: 1rem;
+	padding: 1rem;
+	border: 2px solid var(--red);
+}
+
+.card {
+	margin: 5rem;
+	padding: 5rem;
+	border: 2px solid var(--darkred);
+	text-align: center;
+	align-content: center;
+	justify-content: center;
+	background-color: var(--navy);
+}
+
+.card a {
+	text-decoration: none;
+	color: var(--gray);
+	font-size: 3.5rem;
+	font-weight: 600;
+}
+
+.direction {
+	color: var(--gray);
+}

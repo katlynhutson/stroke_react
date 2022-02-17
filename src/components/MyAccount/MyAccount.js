@@ -26,21 +26,22 @@ const MyAccount = ({ getUsername }) => {
 	}, []);
 
 	if (!previousEvents) {
-		return <p>not ready</p>;
+		return <p className='loading'>Loading</p>;
 	}
 
 	return (
-		<div>
-			<h2>My Records</h2>
-			<h3>Earliest</h3>
+		<div className='myaccount'>
+			<p className='myaccount-title'>My Records</p>
+			<p className='myaccount-new'>Newest</p>
 			{previousEvents.map((previous, index) => {
 				return (
-					<div key={previous.id}>
+					<div className='card' key={previous.id}>
 						<Link to={`/previousevents/${previous.id}`}>{index + 1}</Link>
+						<p className='direction'>Click for event log</p>
 					</div>
 				);
 			})}
-			<h3>Latest</h3>
+			<p className='myaccount-old'>Oldest</p>
 		</div>
 	);
 };

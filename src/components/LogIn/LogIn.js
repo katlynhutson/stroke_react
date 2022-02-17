@@ -36,10 +36,9 @@ const LogIn = ({ handleSetLoggedIn }) => {
 	};
 
 	return (
-		<div>
-			<h2>Log In:</h2>
-			<form onSubmit={handleLogin}>
-				<label htmlFor='email'>Email</label>
+		<div className='create'>
+			<form className='createform' onSubmit={handleLogin}>
+				<label htmlFor='email'>Email:</label>
 				<input
 					type='email'
 					required
@@ -47,7 +46,7 @@ const LogIn = ({ handleSetLoggedIn }) => {
 					value={credentials.email}
 					onChange={handleChange}
 				/>
-				<label htmlFor='password'></label>
+				<label htmlFor='password'>Password:</label>
 				<input
 					type='password'
 					required
@@ -55,7 +54,9 @@ const LogIn = ({ handleSetLoggedIn }) => {
 					value={credentials.password}
 					onChange={handleChange}
 				/>
-				<button type='submit'>Login</button>
+				<button className='submit-create' type='submit'>
+					Login
+				</button>
 			</form>
 		</div>
 	);
