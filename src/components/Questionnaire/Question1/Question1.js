@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { QuestionnaireContext } from '../../../questionnaireContext';
 
 function Question1(props) {
-	const { oneData, setOneData } = useContext(QuestionnaireContext);
+	const { formData, setFormData } = useContext(QuestionnaireContext);
 
 	const navigate = useNavigate();
 
@@ -14,7 +14,7 @@ function Question1(props) {
 	};
 
 	const handleChange = (event) => {
-		setOneData(event.target.value);
+		setFormData({ ...formData, [event.target.name]: event.target.value });
 	};
 
 	return (
@@ -27,13 +27,13 @@ function Question1(props) {
 				</p>
 			</div>
 			<form onSubmit={handleSubmit}>
-				<label htmlFor='time-of-onset'>Select a Time: </label>
+				<label htmlFor='onset_time'>Select a Time: </label>
 				<input
 					type='time'
-					id='time'
-					name='time'
+					id='onset_time'
+					name='onset_time'
 					onChange={handleChange}
-					value={oneData}
+					value={formData.onset_time}
 					required></input>
 
 				<button type='submit'>Next</button>

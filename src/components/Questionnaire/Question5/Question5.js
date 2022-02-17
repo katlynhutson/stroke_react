@@ -1,54 +1,20 @@
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { QuestionnaireContext } from '../../../questionnaireContext';
-import API_URL from '../../../apiConfig';
 
 function Question5(props) {
-	const {
-		fiveData,
-		setFiveData,
-		fourData,
-		threeData,
-		twoData,
-		oneData,
-		formData,
-		setFormData,
-	} = useContext(QuestionnaireContext);
+	const { setFormData, formData } = useContext(QuestionnaireContext);
 
 	const navigate = useNavigate();
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 
-		const data = formData;
-		console.log(data);
-		try {
-			const response = await fetch(API_URL + 'data/', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(data),
-			});
-			console.log(response);
-			if (response.status === 201) {
-				const data = await response.json();
-				console.log(data);
-			}
-		} catch (error) {}
-
 		navigate('/complete');
 	};
 
 	const handleChange = (event) => {
-		setFiveData(event.target.value);
-		setFormData({
-			facial_droop: twoData,
-			arm_drift: threeData,
-			speech: fourData,
-			onset_time: oneData,
-			additional_notes: fiveData,
-		});
+		setFormData({ ...formData, [event.target.name]: event.target.value });
 	};
 
 	return (
@@ -66,7 +32,7 @@ function Question5(props) {
 			</div>
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='notes'>Additional Notes: </label>
-				<input type='text' onChange={handleChange} />
+				<input type='text' name='additional_notes' onChange={handleChange} />
 				<button type='submit'>Next</button>
 			</form>
 		</main>
