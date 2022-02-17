@@ -1,5 +1,20 @@
 # Planning
 
+## The Connections
+
+- (logged out)
+  - App -->
+  - Navigation
+  - Home || Log In || About
+    - Home --> Question1 --> Question2 --> Question3 --> Question4 --> Question5 --> Completed Form --> Create Account(login included) --> PreviousEventDetailPage
+- (logged in)
+  - App -->
+  - Navigation
+  - Home || Log In || About || My Account || Log Out
+    - Home --> Question1 --> Question2 --> Question3 --> Question4 --> Question5 --> Completed Form --> MyAccount
+    - My Account --> PreviousEventDetailPage
+    - LogOut --> Log In
+
 ## 02/17 Planning
 
 ### Goals
@@ -81,6 +96,7 @@
 - Route the Components - :)
 - Set up CR functionality in Questionnaire Components - tomorrow!
 - Deploy Backend when front end MVP reached - tomorrow!
+  - I forgot to commit this day but I made progress!
 
 ## Issue Ticket with Initial planning
 

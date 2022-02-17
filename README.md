@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Stroke Response
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Home Page](./src/images/home-page.png)
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+A tool to help identify potential strokes, record valuable information at the time of the neurological event, increase the likelihood of need care sought, and lessen the burden of memory on individuals responding to a possible stroke.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React
+- React Router
+- JSX
+- JavaScript
+- React-animate-css
+- HTML
+- CSS
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## User Stories
 
-### `npm test`
+#### MVP
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- As a user I want to be able to access a stroke questionnaire, so that I can recognize a stroke in myself or others.
+- As a user I want to be able to record answers to the stroke questionnaire, so that I have a detailed record of symptoms to show the doctors in the ER.
+- As a user I want to be able to create an account, so that I have the option/ability to view previous event notes in follow-up care visits.
+- As a user I want to be able to see my form response notes on a finished screen, so that I can just screenshot the response answers if the account creation feels like a hindrance or unnecessary.
+- As a user I want to be able to see an about page that explains strokes and the background of the app, so that I can learn more about strokes, and have reassurance for the validity of the app.
+- As a user I want to be able to only see event logs associated with my username if I’m logged in, so that I don't have to dig for my event logs.
 
-### `npm run build`
+#### Stretch
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- As a user I want to be able to see the time I started the form, so that I do not have to rely on just myself to record important information.
+- As a user I want to be able to Update and Destroy old event logs, so that I have agency over my personal information and can add notes to the log if I remember something important later that I didn’t think to write down.
+- As a user I want the ability to edit my account information or delete my account, so that I can still access information if I forget the password or delete my account if necessary.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Navigate to the working app
 
-### `npm run eject`
+## Run your own Stroke Response app
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Future Directions
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+In the future, I would like users to be able to update their event log to include the outcome. By recording the data we are currently, we have the ability to research correlations in onset time, and symptom frequency. Outcome data would allow for valuable research of the Cincinnati Prehospital Stroke Scale itself.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Working in Tandem With:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- https://github.com/katlynhutson/stroke_django
+- https://stroke-response-api.herokuapp.com/data/
