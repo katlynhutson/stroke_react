@@ -4,13 +4,14 @@
 
 ### Goals
 
-- Finish responsive styling
+- Finish responsive styling - :)
 - deploy to netlify
 - create read me
 
 ### Little Steps
 
-- finsih styling each component
+- finsih styling each component - :)
+- add a logo
 - deploy
 - create read me
 

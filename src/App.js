@@ -26,6 +26,7 @@ import './style/about.css';
 import './style/my-account.css';
 
 import { Animated } from 'react-animated-css';
+//https://www.npmjs.com/package/react-animated-css
 
 function App() {
 	const initialData = {
@@ -91,8 +92,8 @@ function App() {
 	const handleSetLoggedIn = (token) => {
 		localStorage.setItem('token', token);
 		setLoggedIn(true);
-
 		return;
+		//referenced token auth md for this functionality
 	};
 
 	const handleLogout = async () => {
@@ -113,6 +114,7 @@ function App() {
 				navigate('/login');
 			}
 		} catch (error) {}
+		//referenced token auth md for this functionality
 	};
 
 	useEffect(() => {
