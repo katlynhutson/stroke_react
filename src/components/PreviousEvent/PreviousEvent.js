@@ -13,7 +13,7 @@ const PreviousEvent = ({ getUsername }) => {
 			const response = await fetch(`${API_URL}questionnaires/${id}`);
 			if (response.status === 200) {
 				const data = await response.json();
-				console.log(data);
+
 				setPreviousEvent(data);
 			}
 		} catch (error) {}

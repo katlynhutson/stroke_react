@@ -31,12 +31,15 @@ function Question2(props) {
 				</p>
 			</div>
 			<div>
-				<h2>Question 2</h2>
-				<p>This is question 2</p>
+				<h2>Facial Droop</h2>
+				<h4>
+					Have the patient smile or show their teeth. Does one side not move as
+					well as the other? Does it seem to droop?
+				</h4>
 			</div>
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='facial-droop'>Facial Droop: </label>
-				<label htmlFor='facial-droop-yes'>Yes</label>
+				<label htmlFor='facial-droop-yes'>Yes(Abnormal)</label>
 				<input
 					type='radio'
 					id='facial-droop-yes'
@@ -45,7 +48,7 @@ function Question2(props) {
 					checked={formData.facial_droop === true}
 					onChange={handleChange}
 				/>
-				<label htmlFor='facial-droop-no'>No</label>
+				<label htmlFor='facial-droop-no'>No(Normal)</label>
 				<input
 					type='radio'
 					id='facial-droop-no'
@@ -57,6 +60,12 @@ function Question2(props) {
 
 				<button type='submit'>Next</button>
 			</form>
+
+			<p>
+				If you answered yes to this question, please call 911. With only one
+				abnormal response, there is a 72% chance that the patient is having an
+				ischemic stroke.
+			</p>
 		</main>
 	);
 }

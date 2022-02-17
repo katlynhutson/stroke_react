@@ -16,15 +16,22 @@
 - login functionality - :)
 - read functionality after login - :)
 - post request from logged in user - :)
-- edit request from logged in user to specifically edit the additional notes section - maybe stretch goal
-- error handle on create account parameters
-- create form checker to determine test results
-- get rid of console logs
-- get rid of alerts
+- error handle on create account parameters - :)
+- create form checker to dete - :)
+- get rid of alerts - :)
 - create specific content for each question
-- create specific content for the about page
-- create specific content for formatting the form data
-- put a grid on it
+  - home.js content
+  - about.js content
+  - q1 content
+  - q2 content
+  - q3 content
+  - q4 content
+  - q5 content
+  - completed form content
+  - create account content
+  - log in content
+  - previous event content
+  - my account content
 
 ## 02/15 Planning
 

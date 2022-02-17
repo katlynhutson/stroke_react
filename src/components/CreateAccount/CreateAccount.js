@@ -23,7 +23,7 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-		console.log(account);
+
 		try {
 			const response = await fetch(API_URL + 'users/', {
 				method: 'POST',
@@ -32,7 +32,7 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 					'Content-Type': 'application/json',
 				},
 			});
-			console.log(response);
+
 			if (response.status === 201) {
 				const login = { email: account.email, password: account.password };
 
@@ -46,11 +46,9 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 					});
 					if (response.status === 200) {
 						const data = await response.json();
-						console.log(data.auth_token);
-						handleSetLoggedIn(data.auth_token);
-						console.log('Success!');
 
-						console.log(formData);
+						handleSetLoggedIn(data.auth_token);
+
 						try {
 							const response = await fetch(API_URL + 'questionnaires/', {
 								method: 'POST',
@@ -62,7 +60,6 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 							});
 							if (response.status === 201) {
 								const data = await response.json();
-								console.log(data);
 
 								navigate(`/previousevents/${data.id}`);
 							}
@@ -84,7 +81,7 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 	};
 	return (
 		<div>
-			<h2>Create Account</h2>
+			<h2>Create Account:</h2>
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='username'>Username</label>
 				<input

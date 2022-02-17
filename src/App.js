@@ -47,7 +47,7 @@ function App() {
 			});
 			if (response.status === 200) {
 				const data = await response.json();
-				console.log(data);
+
 				setUsername(data.username);
 			} else {
 				setUsername(null);
@@ -67,7 +67,7 @@ function App() {
 			});
 			if (response.status === 200) {
 				const data = await response.json();
-				console.log(data);
+
 				setUserId(data.id);
 			} else {
 				setUserId(null);
@@ -102,7 +102,6 @@ function App() {
 				localStorage.clear();
 				navigate('/login');
 			}
-			console.log(response);
 		} catch (error) {}
 	};
 

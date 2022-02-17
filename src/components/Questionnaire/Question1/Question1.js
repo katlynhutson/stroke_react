@@ -25,6 +25,10 @@ function Question1(props) {
 					response services. Patients with none of the following symptoms may
 					still require serious mediacal attention.
 				</p>
+				<h2>Time of Onset</h2>
+				<h4>
+					What time did the patient begin to experience neurological symptoms?
+				</h4>
 			</div>
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='onset_time'>Select a Time: </label>
@@ -38,6 +42,16 @@ function Question1(props) {
 
 				<button type='submit'>Next</button>
 			</form>
+			<p>
+				Do they have a headache? Double-vision? Weakness or numbness? Memory
+				loss? Issues with speech? Brain fog? Lack of coordination? When did it
+				start?
+			</p>
+			<p>
+				The time of onset of neurological symptoms is one of the key deciders in
+				stroke treatment. Try to be as accurate as possible. If no symptoms were
+				noted prior, simply record the current time.
+			</p>
 		</main>
 	);
 }

@@ -31,12 +31,16 @@ function Question4(props) {
 				</p>
 			</div>
 			<div>
-				<h2>Question 4</h2>
-				<p>This is question 4</p>
+				<h2>Impacted Speech</h2>
+				<h4>
+					Have the patient say, "You can't teach an old dog new tricks," or some
+					other simple, familiar saying. Does the patient slur the words, get
+					some words wrong, or are they unable to speak?
+				</h4>
 			</div>
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='speech'>Speech: </label>
-				<label htmlFor='speech-yes'>Yes</label>
+				<label htmlFor='speech-yes'>Yes(Abnormal)</label>
 				<input
 					type='radio'
 					id='speech-yes'
@@ -45,7 +49,7 @@ function Question4(props) {
 					checked={formData.speech === true}
 					onChange={handleChange}
 				/>
-				<label htmlFor='speech-no'>No</label>
+				<label htmlFor='speech-no'>No(Normal)</label>
 				<input
 					type='radio'
 					id='speech-no'
@@ -57,6 +61,11 @@ function Question4(props) {
 
 				<button type='submit'>Next</button>
 			</form>
+			<p>
+				If you answered yes to this question, please call 911. With only one
+				abnormal response, there is a 72% chance that the patient is having an
+				ischemic stroke.
+			</p>
 		</main>
 	);
 }

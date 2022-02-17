@@ -27,8 +27,13 @@ function Question5(props) {
 				</p>
 			</div>
 			<div>
-				<h2>Question 5</h2>
-				<p>This is question 5</p>
+				<h2>Additional Notes</h2>
+				<h4>Is there anything else? </h4>
+				<p>
+					Any symptoms not covered, or specific responses that may be noteworthy
+					later? Any medical history or information that you want to remember to
+					share with the doctor? If so, there is space to record it here.
+				</p>
 			</div>
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='notes'>Additional Notes: </label>

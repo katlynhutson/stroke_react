@@ -13,9 +13,9 @@ const MyAccount = ({ getUsername }) => {
 			if (response.status === 200) {
 				const data = await response.json();
 
-				const sorted = data.filter((obj) => obj.owner.includes(username));
-				console.log(sorted);
-				setPreviousEvents(sorted);
+				const filtered = data.filter((obj) => obj.owner.includes(username));
+
+				setPreviousEvents(filtered);
 			}
 		} catch (error) {}
 	};
@@ -31,11 +31,13 @@ const MyAccount = ({ getUsername }) => {
 
 	return (
 		<div>
-			<h2>Prior Events</h2>
-			{previousEvents.map((previous, index) => {
+			<h2>My Records</h2>
+			{previousEvents.map((previous) => {
 				return (
 					<div key={previous.id}>
-						<Link to={`/previousevents/${previous.id}`}>{index + 1}</Link>
+						<Link to={`/previousevents/${previous.id}`}>
+							{previous.created_at}
+						</Link>
 					</div>
 				);
 			})}
