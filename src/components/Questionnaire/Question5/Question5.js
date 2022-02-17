@@ -3,47 +3,14 @@ import { useContext } from 'react';
 import { QuestionnaireContext } from '../../../questionnaireContext';
 
 function Question5(props) {
-	const {
-		// fiveData,
-		// setFiveData,
-		// fourData,
-		// threeData,
-		// twoData,
-		// oneData,
-		setFormData,
-		formData,
-	} = useContext(QuestionnaireContext);
+	const { setFormData, formData } = useContext(QuestionnaireContext);
 
 	const navigate = useNavigate();
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-		// setFormData({
-		// 	facial_droop: twoData,
-		// 	arm_drift: threeData,
-		// 	speech: fourData,
-		// 	onset_time: oneData,
-		// 	additional_notes: fiveData,
-		// });
+
 		navigate('/complete');
-		// const data = formData;
-
-		// try {
-		// 	const response = await fetch(API_URL + 'data/', {
-		// 		method: 'POST',
-		// 		headers: {
-		// 			'Content-Type': 'application/json',
-		// 		},
-		// 		body: JSON.stringify(data),
-		// 	});
-		// 	console.log(response);
-		// 	if (response.status === 201) {
-		// 		const data = await response.json();
-
-		// 		setDataId(data.id);
-		// 		navigate('/complete');
-		// 	}
-		// } catch (error) {}
 	};
 
 	const handleChange = (event) => {

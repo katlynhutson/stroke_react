@@ -13,10 +13,14 @@
 - create account functionality - :)
 - auto log in functionality - :)
 - post after create account functionality - :)
-- login functionality
-- read functionality after login
-- post request from logged in user
-- edit request from logged in user to specifically edit the additional notes section
+- login functionality - :)
+- read functionality after login - :)
+- post request from logged in user - :)
+- edit request from logged in user to specifically edit the additional notes section - maybe stretch goal
+- error handle on create account parameters
+- create form checker to determine test results
+- get rid of console logs
+- get rid of alerts
 - create specific content for each question
 - create specific content for the about page
 - create specific content for formatting the form data
