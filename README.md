@@ -33,11 +33,40 @@ A tool to help identify potential strokes, record valuable information at the ti
 - As a user I want to be able to Update and Destroy old event logs, so that I have agency over my personal information and can add notes to the log if I remember something important later that I didn’t think to write down.
 - As a user I want the ability to edit my account information or delete my account, so that I can still access information if I forget the password or delete my account if necessary.
 
+## Wireframes
+
+![Wireframe1](./src/images/wireframe1.png)
+![Wireframe2](./src/images/wireframe2.png)
+![Wireframe3](./src/images/wireframe3.png)
+![Wireframe4](./src/images/wireframe4.png)
+![Wireframe5](./src/images/wireframe5.png)
+![Wireframe6](./src/images/wireframe6.png)
+![Wireframe7](./src/images/wireframe7.png)
+![Wireframe8](./src/images/wireframe8.png)
+
 ## Getting Started
 
 ### Navigate to the working app
 
+- The working app can be found at [Stroke Response](https://stroke-response.netlify.app/).
+- Click the large red circle to start logging a stroke event.
+- Click 'About' in the navigation bar to learn more about the app.
+
 ## Run your own Stroke Response app
+
+- Fork and clone this repository to your own local repository (terminal) using the SSH or HTML key `git clone`
+- Navigate into the new directory `cd stroke_react`
+- Open the cloned files in Visual Studo code editor. ` code .`
+- Check out your branch of choice `git checkout -b dev`
+  -run `npm i` to download dependencies.
+- run `npm start`
+- This will automatically open http://localhost:3000/ in your web browser and display the stroke response app.
+
+## Major Hurdles
+
+- Log in upon account creation.
+- Live Assessment of form results.
+- useContext.
 
 ## Future Directions
 
