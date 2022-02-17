@@ -22,22 +22,21 @@ function Question2(props) {
 	};
 
 	return (
-		<main>
-			<div>
-				<p>
-					This form is not a substitute for prefessional care or emergency
-					response services. Patients with none of the following symptoms may
-					still require serious mediacal attention.
-				</p>
-			</div>
-			<div>
-				<h2>Facial Droop</h2>
-				<h4>
+		<div className='questionnaire'>
+			<p className='liability'>
+				This form is not a substitute for prefessional care or emergency
+				response services. Patients with none of the following symptoms may
+				still require serious mediacal attention.
+			</p>
+
+			<div className='question-box'>
+				<p className='question-title'>Facial Droop</p>
+				<p className='question'>
 					Have the patient smile or show their teeth. Does one side not move as
 					well as the other? Does it seem to droop?
-				</h4>
+				</p>
 			</div>
-			<form onSubmit={handleSubmit}>
+			<form className='buttonform' onSubmit={handleSubmit}>
 				<label htmlFor='facial-droop'>Facial Droop: </label>
 				<label htmlFor='facial-droop-yes'>Yes(Abnormal)</label>
 				<input
@@ -58,15 +57,17 @@ function Question2(props) {
 					onChange={handleChange}
 				/>
 
-				<button type='submit'>Next</button>
+				<button className='question-submit' type='submit'>
+					Next
+				</button>
 			</form>
 
-			<p>
+			<p className='question-warning'>
 				If you answered yes to this question, please call 911. With only one
 				abnormal response, there is a 72% chance that the patient is having an
 				ischemic stroke.
 			</p>
-		</main>
+		</div>
 	);
 }
 

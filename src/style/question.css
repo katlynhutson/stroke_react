@@ -1,0 +1,116 @@
+.questionnaire {
+	display: flex;
+	justify-content: center;
+	flex-flow: column;
+}
+
+.liability {
+	margin: 1rem;
+	padding: 1rem;
+	border: 2px solid var(--red);
+
+	font-size: 0.75rem;
+	color: var(--navy);
+	text-align: center;
+}
+
+.question-extra {
+	margin: 1rem;
+	padding: 1rem;
+	border: 2px solid var(--navy);
+
+	font-size: 0.75rem;
+	color: var(--navy);
+	text-align: left;
+}
+
+.question-warning {
+	margin: 1rem;
+	padding: 1rem;
+	border: 2px solid var(--red);
+
+	font-size: 0.75rem;
+	color: var(--navy);
+	text-align: center;
+}
+
+.question {
+	font-size: 0.75rem;
+	color: var(--navy);
+	text-align: left;
+}
+
+.question-title {
+	font-size: 0.85rem;
+	color: var(--navy);
+	text-align: left;
+	padding-bottom: 0.5rem;
+}
+
+.timeform {
+	border: 2px solid var(--red);
+	margin: 1rem;
+	padding: 1rem;
+}
+.timeform label {
+	font-size: 0.85rem;
+	color: var(--navy);
+	text-align: left;
+	padding: 1rem;
+	display: flex;
+}
+
+.buttonform {
+	border: 2px solid var(--red);
+	margin: 1rem;
+	padding: 1rem;
+}
+.buttonform label {
+	font-size: 0.85rem;
+	color: var(--navy);
+	text-align: left;
+	padding: 1rem;
+	display: flex;
+}
+
+.buttonform input {
+	margin-left: 1rem;
+	display: flex;
+}
+
+.notesform {
+	border: 2px solid var(--red);
+	margin: 1rem;
+	padding: 1rem;
+}
+.notesform label {
+	font-size: 0.85rem;
+	color: var(--navy);
+	text-align: left;
+	padding-bottom: 1rem;
+	display: flex;
+}
+.notesform input {
+	width: 100%;
+	padding: 1rem;
+	font-family: 'Merriweather', 'Times New Roman', Times, serif;
+}
+
+.notesform button {
+	margin-left: 0rem;
+}
+
+.question-box {
+	margin: 1rem;
+	padding: 1rem;
+	border: 2px solid var(--navy);
+}
+
+.question-submit {
+	/* font-family: 'Merriweather', 'Times New Roman', Times, serif; */
+	background-color: var(--navy);
+	color: var(--white);
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin: 1rem;
+}

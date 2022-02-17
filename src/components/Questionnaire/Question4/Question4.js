@@ -22,23 +22,22 @@ function Question4(props) {
 	};
 
 	return (
-		<main>
-			<div>
-				<p>
-					This form is not a substitute for prefessional care or emergency
-					response services. Patients with none of the following symptoms may
-					still require serious mediacal attention.
-				</p>
-			</div>
-			<div>
-				<h2>Impacted Speech</h2>
-				<h4>
+		<div className='questionnaire'>
+			<p className='liability'>
+				This form is not a substitute for prefessional care or emergency
+				response services. Patients with none of the following symptoms may
+				still require serious mediacal attention.
+			</p>
+
+			<div className='question-box'>
+				<p className='question-title'>Impacted Speech</p>
+				<p className='question'>
 					Have the patient say, "You can't teach an old dog new tricks," or some
 					other simple, familiar saying. Does the patient slur the words, get
 					some words wrong, or are they unable to speak?
-				</h4>
+				</p>
 			</div>
-			<form onSubmit={handleSubmit}>
+			<form className='buttonform' onSubmit={handleSubmit}>
 				<label htmlFor='speech'>Speech: </label>
 				<label htmlFor='speech-yes'>Yes(Abnormal)</label>
 				<input
@@ -59,14 +58,16 @@ function Question4(props) {
 					onChange={handleChange}
 				/>
 
-				<button type='submit'>Next</button>
+				<button className='question-submit' type='submit'>
+					Next
+				</button>
 			</form>
-			<p>
+			<p className='question-warning'>
 				If you answered yes to this question, please call 911. With only one
 				abnormal response, there is a 72% chance that the patient is having an
 				ischemic stroke.
 			</p>
-		</main>
+		</div>
 	);
 }
 

@@ -1,12 +1,26 @@
 # Planning
 
+## 02/17 Planning
+
+### Goals
+
+- Finish responsive styling
+- deploy to netlify
+- create read me
+
+### Little Steps
+
+- finsih styling each component
+- deploy
+- create read me
+
 ## 02/16 Planning
 
 ### Goals
 
 - Establish Post functionality as a logged in user - :)))
-- content crteation
-- STYLE STYLE STYLE
+- content crteation - :)
+- STYLE STYLE STYLE - :)
 
 ### Little Steps
 

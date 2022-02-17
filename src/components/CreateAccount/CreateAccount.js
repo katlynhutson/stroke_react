@@ -80,10 +80,9 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 		}
 	};
 	return (
-		<div>
-			<h2>Create Account:</h2>
-			<form onSubmit={handleSubmit}>
-				<label htmlFor='username'>Username</label>
+		<div className='create'>
+			<form className='createform' onSubmit={handleSubmit}>
+				<label htmlFor='username'>Username:</label>
 				<input
 					type='text'
 					required
@@ -91,7 +90,7 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 					value={account.username}
 					onChange={handleChange}
 				/>
-				<label htmlFor='email'>Email</label>
+				<label htmlFor='email'>Email:</label>
 				<input
 					type='email'
 					required
@@ -99,7 +98,7 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 					name='email'
 					onChange={handleChange}
 				/>
-				<label htmlFor='password'>Password</label>
+				<label htmlFor='password'>Password:</label>
 				<input
 					type='password'
 					required
@@ -107,7 +106,7 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 					value={account.password}
 					onChange={handleChange}
 				/>
-				<label htmlFor='password'>Confirm Password</label>
+				<label htmlFor='password'>Confirm Password: </label>
 				<input
 					type='password'
 					required
@@ -117,12 +116,12 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 					onBlur={handleMatch}
 					minLength='8'
 				/>
-				<button type='submit' disabled={error}>
+				<button className='submit-create' type='submit' disabled={error}>
 					CreateAccount
 				</button>
 			</form>
 			{djangoError ? (
-				<div>
+				<div className='warning'>
 					<p>
 						Passwords must not be similar to the username, too common, or all
 						numbers!
@@ -130,12 +129,12 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 					<p>Please change your password to reflect these requirements</p>
 				</div>
 			) : (
-				<p>
-					Passwords must not be similar to the username, too common, or all
-					numbers.
+				<p className='warning'>
+					Passwords must be 8 characters long, must not be similar to the
+					username, too common, or all numbers.
 				</p>
 			)}
-			{error ? <p>passwords must match</p> : <p></p>}
+			{error ? <p className='warning'>Passwords must match.</p> : <p></p>}
 		</div>
 	);
 };

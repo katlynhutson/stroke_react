@@ -106,64 +106,83 @@ function CompleteForm(props) {
 	}, []);
 
 	if (!dataDetail) {
-		return <p>no</p>;
+		return <p className='loading'>Loading</p>;
 	}
 
 	return (
-		<div>
-			<p>Screenshot this screen for a copy of this record</p>
-			<p>
-				Make an account with us and we'll save a copy of this report for you.
-			</p>
-
-			<h2>Results</h2>
-			<h3>When Form Completed</h3>
-			<p>{time.toString()}</p>
-			<h3>Time of Symptom Onset</h3>
-			<p>{dataDetail.onset_time}</p>
-			<h3>Facial Droop</h3>
-			{dataDetail.facial_droop ? <p>Abnormal</p> : <p>Normal</p>}
-			<h3>Arm Drift</h3>
-			{dataDetail.arm_drift ? <p>Abnormal</p> : <p>Normal</p>}
-			<h3>Speech</h3>
-			{dataDetail.speech ? <p>Abnormal</p> : <p>Normal</p>}
-			<h3>Additional Notes</h3>
-			<p>{dataDetail.additional_notes}</p>
-			<button onClick={handleCreate} disabled={loggedIn}>
-				Submit and Create Account
-			</button>
-			<button onClick={handlePost} disabled={!loggedIn}>
-				Submit to My Account
-			</button>
+		<div className='submitted-form'>
 			{oneHundred ? (
-				<p>
+				<p className='message'>
 					Based off of these results, the patient's risk of currently
 					experiencing an acute stroke is over 85%. Please call 911 immediately
 					with this information.
 				</p>
 			) : null}
 			{sixtySix ? (
-				<p>
+				<p className='message'>
 					Based off of these results, the patient's risk of currently
 					experiencing a stroke is high. Please call 911 immediately with this
 					information.
 				</p>
 			) : null}
 			{thirtythree ? (
-				<p>
+				<p className='message'>
 					Based off of these results, the patient's risk of currently
 					experiencing an ischemic stroke is 72%. Please call 911 immediately
 					with this information.
 				</p>
 			) : null}
 			{zero ? (
-				<p>
+				<p className='message'>
 					Based off of these results, the patient does not fall on the
 					Cincinnati Prehospital Stroke Scale. BUT, please keep in mind, they
 					may still be experiencing a neurological event, or another serious
 					medical event.
 				</p>
 			) : null}
+			<p className='message'>
+				Screenshot this screen for a copy of this record.
+			</p>
+			<p className='message'>
+				Make an account with us, and we'll save a copy of this report for you.
+			</p>
+
+			<div className='form-box'>
+				<p className='form-title'>Results:</p>
+				<p className='section-title'>When Form Completed:</p>
+				<p className='form-data'>{time.toString()}</p>
+				<p className='section-title'>Time of Symptom Onset:</p>
+				<p className='form-data'>{dataDetail.onset_time}</p>
+				<p className='section-title'>Facial Droop:</p>
+				{dataDetail.facial_droop ? (
+					<p className='form-data'>Abnormal</p>
+				) : (
+					<p className='form-data'>Normal</p>
+				)}
+				<p className='section-title'>Arm Drift:</p>
+				{dataDetail.arm_drift ? (
+					<p className='form-data'>Abnormal</p>
+				) : (
+					<p className='form-data'>Normal</p>
+				)}
+				<p className='section-title'>Speech:</p>
+				{dataDetail.speech ? (
+					<p className='form-data'>Abnormal</p>
+				) : (
+					<p className='form-data'>Normal</p>
+				)}
+				<p className='section-title'>Additional Notes:</p>
+				<p className='form-data'>{dataDetail.additional_notes}</p>
+			</div>
+			<button
+				className='form-submit'
+				onClick={handleCreate}
+				disabled={loggedIn}>
+				Submit and Create Account
+			</button>
+			<button className='form-submit' onClick={handlePost} disabled={!loggedIn}>
+				Submit to My Account
+			</button>
 		</div>
 	);
 }
