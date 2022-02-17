@@ -1,12 +1,16 @@
 @import-normalize;
 
 :root {
-	--blue: rgb(165, 196, 212);
-	--periwinkle: rgb(132, 153, 177);
-	--lavender: rgb(123, 109, 141);
-	--purple: rgb(89, 63, 98);
-	--plum: rgb(54, 21, 30);
-	--transparent-lavender: rgb(123, 109, 141, 0.7);
+	--navy: #2b2d42;
+	--gray: #8d99ae;
+	--white: #edf2f4;
+	--red: #ef233c;
+	--darkred: #d90429;
+	/* --transparent-purple: rgb(89, 63, 98, 0.4);
+	--transparent-plum: rgb(54, 21, 30, 0.4);
+	--transparent-lavender: rgb(123, 109, 141, 0.4);
+	--transparent-blue: rgb(165, 196, 212, 0.4);
+	--transparent-periwinkle: rgb(132, 153, 177, 0.4); */
 }
 
 * {
@@ -17,8 +21,8 @@
 }
 
 body {
-	background-color: var(--blue);
-	color: black;
+	background-color: var(--white);
+	height: 100vh;
 }
 
 li {

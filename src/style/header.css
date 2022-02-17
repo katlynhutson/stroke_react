@@ -2,21 +2,24 @@ header {
 	display: grid;
 	grid-template-rows: 1fr 1fr;
 	grid-template-columns: repeat(8 1fr);
+	background-color: var(--navy);
 }
 
 header h1 {
 	font-weight: 400;
+	color: var(--gray);
 }
 
 .title {
 	text-align: center;
 	display: flex;
-	justify-content: center;
+	justify-content: left;
+	margin-left: 1rem;
 	align-items: center;
 	color: var(--plum);
 	font-size: 1rem;
-
-	grid-column: 3 / span 4;
+	text-align: left;
+	grid-column: 1 / span 4;
 	grid-row: 1 / span 1;
 	/* background-color: var(--blue);
 	border-radius: 7px; */
@@ -25,7 +28,11 @@ header h1 {
 nav {
 	grid-row: 2 / span 1;
 	grid-column: 1 / span 8;
-	background-color: var(--plum);
+	background-color: var(--darkred);
+	/* border: 2px solid var(--red); */
+	/* border-radius: 5%; */
+	/* margin-left: 1rem;
+	margin-right: 1rem; */
 }
 
 nav ul {
@@ -47,7 +54,7 @@ nav li {
 }
 
 nav a {
-	color: var(--blue);
+	color: var(--white);
 	text-decoration: none;
 	font-size: 1rem;
 }

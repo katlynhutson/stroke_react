@@ -18,6 +18,8 @@ import LogIn from './components/LogIn/LogIn';
 import MyAccount from './components/MyAccount/MyAccount';
 
 import './style/header.css';
+import './style/home.css';
+import './style/question1.css';
 
 import { Animated } from 'react-animated-css';
 
