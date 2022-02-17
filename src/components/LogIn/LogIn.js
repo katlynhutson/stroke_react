@@ -10,7 +10,6 @@ const LogIn = ({ handleSetLoggedIn }) => {
 
 	const navigate = useNavigate();
 	const [credentials, setCredentials] = useState(initialCredentials);
-	const [error, setError] = useState(false);
 
 	const handleChange = (event) => {
 		setCredentials({ ...credentials, [event.target.name]: event.target.value });
@@ -28,20 +27,18 @@ const LogIn = ({ handleSetLoggedIn }) => {
 			});
 			if (response.status === 200) {
 				const data = await response.json();
-				console.log(data.auth_token);
-				console.log(data);
+
 				handleSetLoggedIn(data.auth_token);
-				console.log('Success!');
+
 				navigate('/');
 			}
 		} catch (error) {}
 	};
 
 	return (
-		<div>
-			<h2>Log In</h2>
-			<form onSubmit={handleLogin}>
-				<label htmlFor='email'>Email</label>
+		<div className='create'>
+			<form className='createform' onSubmit={handleLogin}>
+				<label htmlFor='email'>Email:</label>
 				<input
 					type='email'
 					required
@@ -49,7 +46,7 @@ const LogIn = ({ handleSetLoggedIn }) => {
 					value={credentials.email}
 					onChange={handleChange}
 				/>
-				<label htmlFor='password'></label>
+				<label htmlFor='password'>Password:</label>
 				<input
 					type='password'
 					required
@@ -57,7 +54,9 @@ const LogIn = ({ handleSetLoggedIn }) => {
 					value={credentials.password}
 					onChange={handleChange}
 				/>
-				<button type='submit'>Login</button>
+				<button className='submit-create' type='submit'>
+					Login
+				</button>
 			</form>
 		</div>
 	);

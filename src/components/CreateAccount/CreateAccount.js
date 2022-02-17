@@ -14,7 +14,7 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 	};
 	const navigate = useNavigate();
 	const [error, setError] = useState(false);
-	// const [correct, setCorrect] = useState(false);
+	const [djangoError, setDjangoError] = useState(false);
 	const [account, setAccount] = useState(initalAccount);
 
 	const handleChange = (event) => {
@@ -23,7 +23,7 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-		console.log(account);
+
 		try {
 			const response = await fetch(API_URL + 'users/', {
 				method: 'POST',
@@ -32,7 +32,7 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 					'Content-Type': 'application/json',
 				},
 			});
-			console.log(response);
+
 			if (response.status === 201) {
 				const login = { email: account.email, password: account.password };
 
@@ -46,11 +46,9 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 					});
 					if (response.status === 200) {
 						const data = await response.json();
-						console.log(data.auth_token);
-						handleSetLoggedIn(data.auth_token);
-						console.log('Success!');
 
-						console.log(formData);
+						handleSetLoggedIn(data.auth_token);
+
 						try {
 							const response = await fetch(API_URL + 'questionnaires/', {
 								method: 'POST',
@@ -62,13 +60,14 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 							});
 							if (response.status === 201) {
 								const data = await response.json();
-								console.log(data);
 
 								navigate(`/previousevents/${data.id}`);
 							}
 						} catch (error) {}
 					}
 				} catch (error) {}
+			} else {
+				setDjangoError(true);
 			}
 		} catch (error) {}
 	};
@@ -76,16 +75,14 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 	const handleMatch = (event) => {
 		if (account.password !== account.re_password) {
 			setError(true);
-			alert('Passwords must match!');
 		} else {
 			setError(false);
 		}
 	};
 	return (
-		<div>
-			<h2>Create Account</h2>
-			<form onSubmit={handleSubmit}>
-				<label htmlFor='username'>Username</label>
+		<div className='create'>
+			<form className='createform' onSubmit={handleSubmit}>
+				<label htmlFor='username'>Username:</label>
 				<input
 					type='text'
 					required
@@ -93,7 +90,7 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 					value={account.username}
 					onChange={handleChange}
 				/>
-				<label htmlFor='email'>Email</label>
+				<label htmlFor='email'>Email:</label>
 				<input
 					type='email'
 					required
@@ -101,7 +98,7 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 					name='email'
 					onChange={handleChange}
 				/>
-				<label htmlFor='password'>Password</label>
+				<label htmlFor='password'>Password:</label>
 				<input
 					type='password'
 					required
@@ -109,7 +106,7 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 					value={account.password}
 					onChange={handleChange}
 				/>
-				<label htmlFor='password'>Confirm Password</label>
+				<label htmlFor='password'>Confirm Password: </label>
 				<input
 					type='password'
 					required
@@ -117,11 +114,27 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 					value={account.re_password}
 					onChange={handleChange}
 					onBlur={handleMatch}
+					minLength='8'
 				/>
-				<button type='submit' disabled={error}>
+				<button className='submit-create' type='submit' disabled={error}>
 					CreateAccount
 				</button>
 			</form>
+			{djangoError ? (
+				<div className='warning'>
+					<p>
+						Passwords must not be similar to the username, too common, or all
+						numbers!
+					</p>
+					<p>Please change your password to reflect these requirements</p>
+				</div>
+			) : (
+				<p className='warning'>
+					Passwords must be 8 characters long, must not be similar to the
+					username, too common, or all numbers.
+				</p>
+			)}
+			{error ? <p className='warning'>Passwords must match.</p> : <p></p>}
 		</div>
 	);
 };

@@ -1,12 +1,42 @@
 # Planning
 
+## The Connections
+
+- (logged out)
+  - App -->
+  - Navigation
+  - Home || Log In || About
+    - Home --> Question1 --> Question2 --> Question3 --> Question4 --> Question5 --> Completed Form --> Create Account(login included) --> PreviousEventDetailPage
+- (logged in)
+  - App -->
+  - Navigation
+  - Home || Log In || About || My Account || Log Out
+    - Home --> Question1 --> Question2 --> Question3 --> Question4 --> Question5 --> Completed Form --> MyAccount
+    - My Account --> PreviousEventDetailPage
+    - LogOut --> Log In
+
+## 02/17 Planning
+
+### Goals
+
+- Finish responsive styling - :)
+- deploy to netlify
+- create read me
+
+### Little Steps
+
+- finsih styling each component - :)
+- add a logo
+- deploy
+- create read me
+
 ## 02/16 Planning
 
 ### Goals
 
 - Establish Post functionality as a logged in user - :)))
-- content crteation
-- STYLE STYLE STYLE
+- content crteation - :)
+- STYLE STYLE STYLE - :)
 
 ### Little Steps
 
@@ -16,15 +46,22 @@
 - login functionality - :)
 - read functionality after login - :)
 - post request from logged in user - :)
-- edit request from logged in user to specifically edit the additional notes section - maybe stretch goal
-- error handle on create account parameters
-- create form checker to determine test results
-- get rid of console logs
-- get rid of alerts
+- error handle on create account parameters - :)
+- create form checker to dete - :)
+- get rid of alerts - :)
 - create specific content for each question
-- create specific content for the about page
-- create specific content for formatting the form data
-- put a grid on it
+  - home.js content - :)
+  - about.js content - :)
+  - q1 content - :)
+  - q2 content - :)
+  - q3 content - :)
+  - q4 content - :)
+  - q5 content - :)
+  - completed form content - :)
+  - create account content - :)
+  - log in content - :)
+  - previous event content - :)
+  - my account content - :)
 
 ## 02/15 Planning
 
@@ -59,6 +96,7 @@
 - Route the Components - :)
 - Set up CR functionality in Questionnaire Components - tomorrow!
 - Deploy Backend when front end MVP reached - tomorrow!
+  - I forgot to commit this day but I made progress!
 
 ## Issue Ticket with Initial planning
 

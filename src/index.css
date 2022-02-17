@@ -1,11 +1,30 @@
+@import-normalize;
+
 :root {
-	--black: rgb(0, 0, 0);
-	--navy: rgb(20, 33, 61);
-	--orange: rgb(252, 163, 17);
-	--gray: rgb(229, 229, 229);
-	--white: rgb(255, 255, 255);
+	--navy: #2b2d42;
+	--gray: #8d99ae;
+	--white: #edf2f4;
+	--red: #ef233c;
+	--darkred: #d90429;
+	/* --transparent-purple: rgb(89, 63, 98, 0.4);
+	--transparent-plum: rgb(54, 21, 30, 0.4);
+	--transparent-lavender: rgb(123, 109, 141, 0.4);
+	--transparent-blue: rgb(165, 196, 212, 0.4);
+	--transparent-periwinkle: rgb(132, 153, 177, 0.4); */
 }
 
 * {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Merriweather', 'Times New Roman', Times, serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--white);
+	height: 100vh;
+}
+
+li {
+	list-style: none;
 }

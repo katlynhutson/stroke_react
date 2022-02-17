@@ -18,15 +18,20 @@ function Question1(props) {
 	};
 
 	return (
-		<main>
-			<div>
-				<p>
-					This form is not a substitute for prefessional care or emergency
-					response services. Patients with none of the following symptoms may
-					still require serious mediacal attention.
+		<div className='questionnaire'>
+			<p className='liability'>
+				This form is not a substitute for prefessional care or emergency
+				response services. Patients with none of the following symptoms may
+				still require serious mediacal attention.
+			</p>
+			<div className='question-box'>
+				<p className='question-title'>Question One:</p>
+				<p className='question'>
+					What time did the patient begin to experience neurological symptoms?
 				</p>
 			</div>
-			<form onSubmit={handleSubmit}>
+
+			<form className='timeform' onSubmit={handleSubmit}>
 				<label htmlFor='onset_time'>Select a Time: </label>
 				<input
 					type='time'
@@ -36,9 +41,21 @@ function Question1(props) {
 					value={formData.onset_time}
 					required></input>
 
-				<button type='submit'>Next</button>
+				<button className='question-submit' type='submit'>
+					Next
+				</button>
 			</form>
-		</main>
+			<p className='question-extra'>
+				Do they have a headache? Double-vision? Weakness or numbness? Memory
+				loss? Issues with speech? Brain fog? Lack of coordination? When did it
+				start?
+			</p>
+			<p className='question-warning'>
+				The time of onset of neurological symptoms is one of the key deciders in
+				stroke treatment. Try to be as accurate as possible. If no symptoms were
+				noted prior, simply record the current time.
+			</p>
+		</div>
 	);
 }
 

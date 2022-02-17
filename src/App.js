@@ -17,6 +17,17 @@ import PreviousEvent from './components/PreviousEvent/PreviousEvent';
 import LogIn from './components/LogIn/LogIn';
 import MyAccount from './components/MyAccount/MyAccount';
 
+import './style/header.css';
+import './style/home.css';
+import './style/question.css';
+import './style/submitted-form.css';
+import './style/create-account.css';
+import './style/about.css';
+import './style/my-account.css';
+
+import { Animated } from 'react-animated-css';
+//https://www.npmjs.com/package/react-animated-css
+
 function App() {
 	const initialData = {
 		onset_time: '00:00',
@@ -47,7 +58,7 @@ function App() {
 			});
 			if (response.status === 200) {
 				const data = await response.json();
-				console.log(data);
+
 				setUsername(data.username);
 			} else {
 				setUsername(null);
@@ -67,7 +78,7 @@ function App() {
 			});
 			if (response.status === 200) {
 				const data = await response.json();
-				console.log(data);
+
 				setUserId(data.id);
 			} else {
 				setUserId(null);
@@ -81,8 +92,8 @@ function App() {
 	const handleSetLoggedIn = (token) => {
 		localStorage.setItem('token', token);
 		setLoggedIn(true);
-
 		return;
+		//referenced token auth md for this functionality
 	};
 
 	const handleLogout = async () => {
@@ -102,8 +113,8 @@ function App() {
 				localStorage.clear();
 				navigate('/login');
 			}
-			console.log(response);
 		} catch (error) {}
+		//referenced token auth md for this functionality
 	};
 
 	useEffect(() => {
@@ -114,7 +125,7 @@ function App() {
 	}, [loggedIn]);
 
 	return (
-		<div>
+		<div className='overall-container'>
 			<QuestionnaireContext.Provider
 				value={{
 					formData,
@@ -126,7 +137,10 @@ function App() {
 					userId,
 				}}>
 				<header>
-					<h1>STROKE RESPONSE</h1>
+					<Animated animationIn='bounceInDown' className='title'>
+						<h1>Stroke Response</h1>
+					</Animated>
+
 					<Navigation handleLogout={handleLogout} />
 				</header>
 

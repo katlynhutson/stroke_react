@@ -1,0 +1,32 @@
+.about {
+	display: flex;
+	justify-content: center;
+	flex-flow: column;
+}
+
+.about-title {
+	font-size: 1rem;
+	color: var(--navy);
+	text-align: center;
+	margin: 1rem;
+	padding: 1rem;
+	border: 2px solid var(--red);
+}
+
+.about-section {
+	margin: 1rem;
+	padding: 1rem;
+	border: 2px solid var(--navy);
+
+	font-size: 0.75rem;
+	color: var(--navy);
+	text-align: center;
+}
+.plug {
+	font-size: 0.75rem;
+	color: var(--navy);
+	text-align: center;
+	margin: 1rem;
+	padding: 1rem;
+	border: 2px solid var(--red);
+}

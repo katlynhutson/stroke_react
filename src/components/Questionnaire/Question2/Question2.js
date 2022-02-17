@@ -22,21 +22,23 @@ function Question2(props) {
 	};
 
 	return (
-		<main>
-			<div>
-				<p>
-					This form is not a substitute for prefessional care or emergency
-					response services. Patients with none of the following symptoms may
-					still require serious mediacal attention.
+		<div className='questionnaire'>
+			<p className='liability'>
+				This form is not a substitute for prefessional care or emergency
+				response services. Patients with none of the following symptoms may
+				still require serious mediacal attention.
+			</p>
+
+			<div className='question-box'>
+				<p className='question-title'>Facial Droop</p>
+				<p className='question'>
+					Have the patient smile or show their teeth. Does one side not move as
+					well as the other? Does it seem to droop?
 				</p>
 			</div>
-			<div>
-				<h2>Question 2</h2>
-				<p>This is question 2</p>
-			</div>
-			<form onSubmit={handleSubmit}>
+			<form className='buttonform' onSubmit={handleSubmit}>
 				<label htmlFor='facial-droop'>Facial Droop: </label>
-				<label htmlFor='facial-droop-yes'>Yes</label>
+				<label htmlFor='facial-droop-yes'>Yes(Abnormal)</label>
 				<input
 					type='radio'
 					id='facial-droop-yes'
@@ -45,7 +47,7 @@ function Question2(props) {
 					checked={formData.facial_droop === true}
 					onChange={handleChange}
 				/>
-				<label htmlFor='facial-droop-no'>No</label>
+				<label htmlFor='facial-droop-no'>No(Normal)</label>
 				<input
 					type='radio'
 					id='facial-droop-no'
@@ -55,9 +57,17 @@ function Question2(props) {
 					onChange={handleChange}
 				/>
 
-				<button type='submit'>Next</button>
+				<button className='question-submit' type='submit'>
+					Next
+				</button>
 			</form>
-		</main>
+
+			<p className='question-warning'>
+				If you answered yes to this question, please call 911. With only one
+				abnormal response, there is a 72% chance that the patient is having an
+				ischemic stroke.
+			</p>
+		</div>
 	);
 }
 

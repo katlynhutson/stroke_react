@@ -1,0 +1,67 @@
+.loading {
+	margin: 1rem;
+	padding: 1rem;
+	border: 2px solid var(--red);
+
+	font-size: 0.75rem;
+	color: var(--navy);
+	text-align: center;
+}
+
+.submitted-form {
+	display: flex;
+	justify-content: center;
+	flex-flow: column;
+}
+
+.message {
+	margin: 1rem;
+	padding: 1rem;
+	margin-bottom: 1rem;
+	border: 2px solid var(--red);
+
+	font-size: 0.75rem;
+	color: var(--navy);
+	text-align: center;
+}
+
+.form-title {
+	font-size: 1.25rem;
+	color: var(--navy);
+	text-align: left;
+	padding: 1rem;
+	display: flex;
+	background-color: var(--gray);
+}
+
+.form-box {
+	margin: 1rem;
+	padding: 1rem;
+	border: 2px solid var(--navy);
+}
+
+.section-title {
+	font-size: 1rem;
+	color: var(--navy);
+	text-align: left;
+	padding: 1rem;
+	display: flex;
+	border: 2px solid var(--gray);
+}
+
+.form-data {
+	font-size: 1rem;
+	color: var(--navy);
+	text-align: left;
+	padding: 1rem;
+	display: flex;
+	background-color: var(--gray);
+}
+
+.form-submit {
+	background-color: var(--navy);
+	color: var(--white);
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin: 1rem;
+}

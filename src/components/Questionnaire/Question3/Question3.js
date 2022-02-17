@@ -22,21 +22,25 @@ function Question3(props) {
 	};
 
 	return (
-		<main>
-			<div>
-				<p>
-					This form is not a substitute for prefessional care or emergency
-					response services. Patients with none of the following symptoms may
-					still require serious mediacal attention.
+		<div className='questionnaire'>
+			<p className='liability'>
+				This form is not a substitute for prefessional care or emergency
+				response services. Patients with none of the following symptoms may
+				still require serious mediacal attention.
+			</p>
+
+			<div className='question-box'>
+				<p className='question-title'>Arm Drift</p>
+				<p className='question'>
+					Have the patient close their eyes and hold their arms straight out in
+					front of them with their palms facing up for about 10 seconds. Does
+					one arm not move, or drift down compared with the other arm?
 				</p>
+				<p className='question'>Both arms should move equally or not at all</p>
 			</div>
-			<div>
-				<h2>Question 3</h2>
-				<p>This is question 3</p>
-			</div>
-			<form onSubmit={handleSubmit}>
-				<label htmlFor='arm-drift'>Arm-Drift: </label>
-				<label htmlFor='arm-drift-yes'>Yes</label>
+			<form className='buttonform' onSubmit={handleSubmit}>
+				<label htmlFor='arm-drift'>Arm Drift: </label>
+				<label htmlFor='arm-drift-yes'>Yes(Abnormal)</label>
 				<input
 					type='radio'
 					id='arm-drift-yes'
@@ -45,7 +49,7 @@ function Question3(props) {
 					checked={formData.arm_drift === true}
 					onChange={handleChange}
 				/>
-				<label htmlFor='arm-drift-no'>No</label>
+				<label htmlFor='arm-drift-no'>No(Normal)</label>
 				<input
 					type='radio'
 					id='arm-drift-no'
@@ -55,9 +59,17 @@ function Question3(props) {
 					onChange={handleChange}
 				/>
 
-				<button type='submit'>Next</button>
+				<button className='question-submit' type='submit'>
+					Next
+				</button>
 			</form>
-		</main>
+
+			<p className='question-warning'>
+				If you answered yes to this question, please call 911. With only one
+				abnormal response, there is a 72% chance that the patient is having an
+				ischemic stroke.
+			</p>
+		</div>
 	);
 }
 

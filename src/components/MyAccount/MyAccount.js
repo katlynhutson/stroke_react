@@ -1,4 +1,5 @@
 import { useState, useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { QuestionnaireContext } from '../../questionnaireContext';
 import API_URL from '../../apiConfig';
 
@@ -12,9 +13,9 @@ const MyAccount = ({ getUsername }) => {
 			if (response.status === 200) {
 				const data = await response.json();
 
-				const sorted = data.filter((obj) => obj.owner.includes(username));
-				console.log(sorted);
-				setPreviousEvents(sorted);
+				const filtered = data.filter((obj) => obj.owner.includes(username));
+
+				setPreviousEvents(filtered);
 			}
 		} catch (error) {}
 	};
@@ -25,13 +26,22 @@ const MyAccount = ({ getUsername }) => {
 	}, []);
 
 	if (!previousEvents) {
-		return <p>not ready</p>;
+		return <p className='loading'>Loading</p>;
 	}
 
 	return (
-		<div>
-			<h2>Prior Events</h2>
-			<p>{previousEvents.toString()}</p>
+		<div className='myaccount'>
+			<p className='myaccount-title'>My Records</p>
+			<p className='myaccount-new'>Newest</p>
+			{previousEvents.map((previous, index) => {
+				return (
+					<div className='card' key={previous.id}>
+						<Link to={`/previousevents/${previous.id}`}>{index + 1}</Link>
+						<p className='direction'>Click for event log</p>
+					</div>
+				);
+			})}
+			<p className='myaccount-old'>Oldest</p>
 		</div>
 	);
 };
