@@ -1,4 +1,5 @@
 import { useState, useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { QuestionnaireContext } from '../../questionnaireContext';
 import API_URL from '../../apiConfig';
 
@@ -31,7 +32,13 @@ const MyAccount = ({ getUsername }) => {
 	return (
 		<div>
 			<h2>Prior Events</h2>
-			<p>{previousEvents.toString()}</p>
+			{previousEvents.map((previous, index) => {
+				return (
+					<div key={previous.id}>
+						<Link to={`/previousevents/${previous.id}`}>{index + 1}</Link>
+					</div>
+				);
+			})}
 		</div>
 	);
 };
