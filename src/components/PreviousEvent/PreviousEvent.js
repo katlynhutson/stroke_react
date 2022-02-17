@@ -3,7 +3,7 @@ import API_URL from '../../apiConfig';
 import { useState, useEffect, useContext } from 'react';
 import { QuestionnaireContext } from '../../questionnaireContext';
 
-function PreviousEvent(props) {
+const PreviousEvent = ({ getUsername }) => {
 	const [previousEvent, setPreviousEvent] = useState(null);
 	const { username } = useContext(QuestionnaireContext);
 	const { id } = useParams();
@@ -21,6 +21,7 @@ function PreviousEvent(props) {
 
 	useEffect(() => {
 		getPreviousEvent();
+		getUsername();
 	}, []);
 
 	if (!previousEvent) {
@@ -49,6 +50,6 @@ function PreviousEvent(props) {
 			<p>{previousEvent.owner}</p>
 		</div>
 	);
-}
+};
 
 export default PreviousEvent;

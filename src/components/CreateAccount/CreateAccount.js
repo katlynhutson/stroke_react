@@ -3,9 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { QuestionnaireContext } from '../../questionnaireContext';
 
-function CreateAccount(props) {
-	const { formData, loggedIn, setLoggedIn, setUsername } =
-		useContext(QuestionnaireContext);
+const CreateAccount = ({ handleSetLoggedIn }) => {
+	const { formData } = useContext(QuestionnaireContext);
 
 	const initalAccount = {
 		email: '',
@@ -15,15 +14,8 @@ function CreateAccount(props) {
 	};
 	const navigate = useNavigate();
 	const [error, setError] = useState(false);
-	const [correct, setCorrect] = useState(false);
+	// const [correct, setCorrect] = useState(false);
 	const [account, setAccount] = useState(initalAccount);
-
-	const handleSetLoggedIn = (token) => {
-		localStorage.setItem('token', token);
-		setLoggedIn(true);
-
-		return;
-	};
 
 	const handleChange = (event) => {
 		setAccount({ ...account, [event.target.name]: event.target.value });
@@ -71,7 +63,7 @@ function CreateAccount(props) {
 							if (response.status === 201) {
 								const data = await response.json();
 								console.log(data);
-								setUsername(account.username);
+
 								navigate(`/previousevents/${data.id}`);
 							}
 						} catch (error) {}
@@ -132,6 +124,6 @@ function CreateAccount(props) {
 			</form>
 		</div>
 	);
-}
+};
 
 export default CreateAccount;

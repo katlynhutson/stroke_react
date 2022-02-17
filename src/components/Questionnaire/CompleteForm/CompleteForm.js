@@ -1,10 +1,10 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { QuestionnaireContext } from '../../../questionnaireContext';
 import { useContext, useEffect, useState } from 'react';
 import API_URL from '../../../apiConfig';
 
 function CompleteForm(props) {
-	const { formData } = useContext(QuestionnaireContext);
+	const { formData, loggedIn } = useContext(QuestionnaireContext);
 	const [dataDetail, setDataDetail] = useState(null);
 	const navigate = useNavigate();
 
@@ -27,8 +27,27 @@ function CompleteForm(props) {
 		} catch (error) {}
 	};
 
-	const handleClick = () => {
+	const handleCreate = () => {
 		navigate('/createaccount');
+	};
+
+	const handlePost = async () => {
+		try {
+			const response = await fetch(API_URL + 'questionnaires/', {
+				method: 'POST',
+				headers: {
+					Authorization: `Token ${localStorage.getItem('token')}`,
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(formData),
+			});
+			if (response.status === 201) {
+				const data = await response.json();
+				console.log(data);
+
+				navigate(`/previousevents/${data.id}`);
+			}
+		} catch (error) {}
 	};
 
 	useEffect(() => {
@@ -52,7 +71,12 @@ function CompleteForm(props) {
 			<p>{dataDetail.speech.toString()}</p>
 			<h3>Additional Notes</h3>
 			<p>{dataDetail.additional_notes}</p>
-			<button onClick={handleClick}>Create Account</button>
+			<button onClick={handleCreate} disabled={loggedIn}>
+				Create Account
+			</button>
+			<button onClick={handlePost} disabled={!loggedIn}>
+				I'm already logged In
+			</button>
 		</div>
 	);
 }

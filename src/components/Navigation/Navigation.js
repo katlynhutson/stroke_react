@@ -1,9 +1,11 @@
 import { Squash as Hamburger } from 'hamburger-react';
 // https://hamburger-react.netlify.app/
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { QuestionnaireContext } from '../../questionnaireContext';
 
-function Navigation(props) {
+const Navigation = ({ handleLogout }) => {
+	const { loggedIn, userId } = useContext(QuestionnaireContext);
 	const [isOpen, setOpen] = useState(false);
 
 	return (
@@ -23,16 +25,27 @@ function Navigation(props) {
 							About
 						</Link>
 					</li>
-					{/* <li>
-						<Link to='/question/1' className='nav-link'>
-							Questionnaire
-						</Link>
-					</li> */}
+					{loggedIn ? (
+						<ul>
+							<li>
+								<Link to='/' onClick={handleLogout}>
+									Log Out
+								</Link>
+							</li>
+							<li>
+								<Link to={`/myaccount/${userId}`}>My Account</Link>
+							</li>
+						</ul>
+					) : (
+						<li>
+							<Link to='/login'>Log In</Link>
+						</li>
+					)}
 				</ul>
 			</nav>
 		</header>
 	);
-}
+};
 
 export default Navigation;
 

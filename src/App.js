@@ -1,5 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import About from './components/About/About';
 import Home from './components/Home/Home';
 import Navigation from './components/Navigation/Navigation';
@@ -14,6 +14,8 @@ import Question5 from './components/Questionnaire/Question5/Question5';
 import CompleteForm from './components/Questionnaire/CompleteForm/CompleteForm';
 import CreateAccount from './components/CreateAccount/CreateAccount';
 import PreviousEvent from './components/PreviousEvent/PreviousEvent';
+import LogIn from './components/LogIn/LogIn';
+import MyAccount from './components/MyAccount/MyAccount';
 
 function App() {
 	const initialData = {
@@ -31,6 +33,10 @@ function App() {
 	);
 
 	const [username, setUsername] = useState(null);
+
+	const [userId, setUserId] = useState(null);
+
+	const navigate = useNavigate();
 
 	const getUsername = async () => {
 		try {
@@ -52,12 +58,63 @@ function App() {
 		} catch (error) {}
 	};
 
+	const getUserId = async () => {
+		try {
+			const response = await fetch(API_URL + 'users/me/', {
+				headers: {
+					Authorization: `Token ${localStorage.getItem('token')}`,
+				},
+			});
+			if (response.status === 200) {
+				const data = await response.json();
+				console.log(data);
+				setUserId(data.id);
+			} else {
+				setUserId(null);
+				setLoggedIn(false);
+
+				localStorage.clear();
+			}
+		} catch (error) {}
+	};
+
+	const handleSetLoggedIn = (token) => {
+		localStorage.setItem('token', token);
+		setLoggedIn(true);
+
+		return;
+	};
+
+	const handleLogout = async () => {
+		try {
+			const response = await fetch(API_URL + 'token/logout/', {
+				method: 'POST',
+				body: JSON.stringify(localStorage.getItem('token')),
+				headers: {
+					'Content-Type': 'application/json',
+					Authorization: `Token ${localStorage.getItem('token')}`,
+				},
+			});
+			if (response.status === 204) {
+				setUsername(null);
+				setLoggedIn(false);
+
+				localStorage.clear();
+				navigate('/login');
+			}
+			console.log(response);
+		} catch (error) {}
+	};
+
+	useEffect(() => {
+		if (loggedIn) {
+			getUsername();
+			getUserId();
+		}
+	}, [loggedIn]);
+
 	return (
 		<div>
-			<header>
-				<h1>STROKE RESPONSE</h1>
-				<Navigation />
-			</header>
 			<QuestionnaireContext.Provider
 				value={{
 					formData,
@@ -66,8 +123,13 @@ function App() {
 					setUsername,
 					loggedIn,
 					setLoggedIn,
-					getUsername,
+					userId,
 				}}>
+				<header>
+					<h1>STROKE RESPONSE</h1>
+					<Navigation handleLogout={handleLogout} />
+				</header>
+
 				<Routes>
 					<Route path='/' element={<Home />} />
 					<Route path='/about' element={<About />} />
@@ -80,8 +142,22 @@ function App() {
 					<Route path='/question/5' element={<Question5 />} />
 
 					<Route path='/complete' element={<CompleteForm />} />
-					<Route path='/createaccount' element={<CreateAccount />} />
-					<Route path='/previousevents/:id' element={<PreviousEvent />} />
+					<Route
+						path='/createaccount'
+						element={<CreateAccount handleSetLoggedIn={handleSetLoggedIn} />}
+					/>
+					<Route
+						path='/previousevents/:id'
+						element={<PreviousEvent getUsername={getUsername} />}
+					/>
+					<Route
+						path='/login'
+						element={<LogIn handleSetLoggedIn={handleSetLoggedIn} />}
+					/>
+					<Route
+						path='/myaccount/:id'
+						element={<MyAccount getUsername={getUsername} />}
+					/>
 				</Routes>
 			</QuestionnaireContext.Provider>
 		</div>
