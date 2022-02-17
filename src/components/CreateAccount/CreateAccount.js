@@ -14,7 +14,7 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 	};
 	const navigate = useNavigate();
 	const [error, setError] = useState(false);
-	// const [correct, setCorrect] = useState(false);
+	const [djangoError, setDjangoError] = useState(false);
 	const [account, setAccount] = useState(initalAccount);
 
 	const handleChange = (event) => {
@@ -69,6 +69,8 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 						} catch (error) {}
 					}
 				} catch (error) {}
+			} else {
+				setDjangoError(true);
 			}
 		} catch (error) {}
 	};
@@ -76,7 +78,6 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 	const handleMatch = (event) => {
 		if (account.password !== account.re_password) {
 			setError(true);
-			alert('Passwords must match!');
 		} else {
 			setError(false);
 		}
@@ -117,11 +118,27 @@ const CreateAccount = ({ handleSetLoggedIn }) => {
 					value={account.re_password}
 					onChange={handleChange}
 					onBlur={handleMatch}
+					minLength='8'
 				/>
 				<button type='submit' disabled={error}>
 					CreateAccount
 				</button>
 			</form>
+			{djangoError ? (
+				<div>
+					<p>
+						Passwords must not be similar to the username, too common, or all
+						numbers!
+					</p>
+					<p>Please change your password to reflect these requirements</p>
+				</div>
+			) : (
+				<p>
+					Passwords must not be similar to the username, too common, or all
+					numbers.
+				</p>
+			)}
+			{error ? <p>passwords must match</p> : <p></p>}
 		</div>
 	);
 };
